@@ -1,9 +1,8 @@
 
   function createInfiniteScroll(rowElement, speed, direction = 1) {
-    let pos = 0; // starting translateX value
+    let pos = 0;  
 
-    function step() {
-      // move
+    function step() { 
       pos += speed * direction;
       rowElement.style.transform = `translateX(${pos}px)`;
 
@@ -12,23 +11,16 @@
       const rowRect = rowElement.getBoundingClientRect();
       const firstRect = firstChild.getBoundingClientRect();
       const lastRect = lastChild.getBoundingClientRect();
-
-      // Direction: 1 = left ➝ right
-      if (direction === 1) {
-        // agar first image poori right side se bahar chali jaye
-        if (firstRect.right < 0) {
-          // usko end pe bhej do
-          rowElement.appendChild(firstChild);
-          // position ko adjust karo taake jump na aaye
-          pos += firstRect.width + 40; // 40 = gap
+ 
+      if (direction === 1) { 
+        if (firstRect.right < 0) { 
+          rowElement.appendChild(firstChild); 
+          pos += firstRect.width + 40;  
           rowElement.style.transform = `translateX(${pos}px)`;
         }
-      } else {
-        // direction = -1, right ➝ left
-        if (lastRect.left > window.innerWidth) {
-          // last ko start pe le aao
-          rowElement.insertBefore(lastChild, rowElement.children[0]);
-          // adjust position
+      } else { 
+        if (lastRect.left > window.innerWidth) { 
+          rowElement.insertBefore(lastChild, rowElement.children[0]); 
           pos -= lastRect.width + 40;
           rowElement.style.transform = `translateX(${pos}px)`;
         }
@@ -43,10 +35,9 @@
   window.addEventListener('load', function () {
     const rowLeft = document.getElementById('row-left');
     const rowRight = document.getElementById('row-right');
-
-    // tez speed rakh raha hoon, change kar sakta hai (1, 2, 3...)
-    createInfiniteScroll(rowLeft, 1.5, 1);   // left ➝ right
-    createInfiniteScroll(rowRight, 1.5, -1); // right ➝ left
+ 
+    createInfiniteScroll(rowLeft, 1.5, 1);   
+    createInfiniteScroll(rowRight, 1.5, -1); 
   });
  
 
@@ -57,18 +48,18 @@
 
     viewMoreBtn.addEventListener("click", function () {
       extraServices.forEach(card => {
-        card.classList.remove("d-none");   // show all remaining cards
+        card.classList.remove("d-none");    
       });
-      viewMoreBtn.classList.add("d-none"); // hide "View More"
-      viewLessBtn.classList.remove("d-none"); // show "View Less"
+      viewMoreBtn.classList.add("d-none");  
+      viewLessBtn.classList.remove("d-none");  
     });
 
     viewLessBtn.addEventListener("click", function () {
       extraServices.forEach(card => {
-        card.classList.add("d-none");     // hide extra cards
+        card.classList.add("d-none");     
       });
-      viewLessBtn.classList.add("d-none"); // hide "View Less"
-      viewMoreBtn.classList.remove("d-none"); // show "View More"
+      viewLessBtn.classList.add("d-none");  
+      viewMoreBtn.classList.remove("d-none");  
     });
   });
 
@@ -77,22 +68,19 @@
         AOS.init({ duration: 800, once: true });
 
         (function() {
-            emailjs.init("xzBpQi5U68rp562Lu"); // Apni ID yahan check kar lena
+            emailjs.init("xzBpQi5U68rp562Lu");  
         })();
 
         document.getElementById("contactForm").addEventListener("submit", function(e) {
             e.preventDefault();
-
-            // --- 1. Collect Selected Services ---
+ 
             const checkedServices = document.querySelectorAll('.service-chk:checked');
             let servicesArray = [];
             checkedServices.forEach((checkbox) => {
                 servicesArray.push(checkbox.value);
-            });
-            // Hidden input mein value set kar rahe hain
+            }); 
             document.getElementById('selected_services').value = servicesArray.join(", ");
-
-            // --- 2. Sending Email ---
+ 
             const statusMsg = document.getElementById("status-message");
             const btn = document.getElementById("submitBtn");
             const originalBtnText = btn.innerText;
@@ -100,8 +88,7 @@
             btn.innerText = "Sending...";
             btn.disabled = true;
             statusMsg.innerText = "";
-
-            // 'selected_services' variable template mein hona chahiye
+ 
             emailjs.sendForm("service_kkw0omk", "template_t4n5g19", this)
                 .then(() => {
                     statusMsg.innerText = "✅ Inquiry Sent Successfully!";

@@ -8,22 +8,22 @@
 /* Navbar Styling */
         .navbar {
             background-color: white !important;
-            min-height: 80px; /* Height badhai taake logo fit aaye */
+            min-height: 80px;  
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             padding: 10px 20px;
         }
 
-        /* --- LOGO STYLING (Big Size Fixed) --- */
+        
         .logo {
-            width: 180px;  /* Bada kiya */
-            height: 60px;  /* Bada kiya */
+            width: 180px;   
+            height: 60px;   
             background-image: url('./images/logo.webp'); 
             background-size: contain;
             background-repeat: no-repeat;
             background-position: left center;
         }
 
-        /* --- CENTER BUTTONS --- */
+        
         #nav-btns {
             background: transparent;
             color: rgb(17, 17, 58);
@@ -57,7 +57,7 @@
             color: #4da6ff;
         }
 
-        /* --- RIGHT BUTTONS --- */
+        
         #nav-career { 
             background-color: rgb(17, 17, 58);
             color: white;
@@ -91,9 +91,9 @@
             color: white; 
         }
 
-        /* --- OFFCANVAS STYLING --- */
+        
         .custom-offcanvas {
-            height: auto !important; /* Content ke hisaab se height */
+            height: auto !important;  
             min-height: 40vh;
             max-height: 80vh;
             background-color: #fff;
@@ -135,17 +135,12 @@
             border-left: 2px solid #eee;
         }
 
-        /* ================================
-           RESPONSIVE – MOBILE OPTIMIZE
-           ================================ */
-
-        /* Tablet */
+         
         @media (max-width: 992px) {
             .navbar {
                 padding: 10px 15px;
             }
-            
-            /* Buttons wrap on tablet */
+             
             .center-nav-container {
                 display: flex;
                 justify-content: center;
@@ -154,7 +149,7 @@
             }
         }
 
-        /* Mobile */
+        
         @media (max-width: 768px) {
             .navbar {
                 min-height: auto;
@@ -167,36 +162,36 @@
                 gap: 15px;
             }
 
-            /* Logo thoda chota mobile par lekin abhi bhi visible */
+          
             .logo {
                 width: 150px;
                 height: 50px;
                 background-position: center;
             }
 
-            /* Center Buttons Layout */
+            
             .center-nav-container {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 10px; /* Consistent Gap */
+                gap: 10px;  
                 width: 100%;
             }
 
             #nav-btns {
                 font-size: 12px;
                 padding: 8px 12px;
-                background-color: #f8f9fa; /* Halki background taake buttons alag dikhen */
+                background-color: #f8f9fa; 
                 border-radius: 6px;
-                flex: 1 1 40%; /* 2 buttons per row approach */
+                flex: 1 1 40%;  
                 text-align: center;
             }
             
             #nav-btns:hover::after {
-                width: 0; /* Mobile pe underline hata di */
+                width: 0;  
             }
 
-            /* Right Buttons */
+            
             .right-nav-container {
                 width: 100%;
                 justify-content: center;
@@ -207,7 +202,7 @@
                 font-size: 11px;
                 height: 36px;
                 padding: 0 15px;
-                width: 45%; /* Barabar width */
+                width: 45%;  
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -216,38 +211,36 @@
      
 
  /*heroooooooooooooooooooooooooooo*/
-/* Hero Section */
+ 
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100vh;              /* Desktop pe full screen */
+  height: 100vh;               
   overflow: hidden;
   background: none;
 }
-
-/* Video */
+ 
 .hero-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* video full area cover kare */
+  object-fit: cover;            
   z-index: 1;
 }
-
-/* Dark overlay */
+ 
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* dark filter */
+  background-color: rgba(0, 0, 0, 0.5);  
   z-index: 2;
 }
 
-/* Hero content */
+
 .hero-content {
   position: relative;
   z-index: 3;
@@ -294,9 +287,7 @@
   border: 0.5px rgb(17, 17, 58) solid;
 }
 
-/* ===========================
-   TABLET (<= 992px)
-   =========================== */
+ 
 @media (max-width: 992px) {
   .hero-section {
     height: 90vh;
@@ -323,12 +314,10 @@
   }
 }
 
-/* ===========================
-   MOBILE (<= 768px)
-   =========================== */
+ 
 @media (max-width: 768px) {
   .hero-section {
-    height: 320px;        /* yahan approx 300px ka hero/video area */
+    height: 320px;         
   }
 
   .hero-content {
@@ -357,12 +346,10 @@
   }
 }
 
-/* ===========================
-   EXTRA SMALL (<= 480px)
-   =========================== */
+ 
 @media (max-width: 480px) {
   .hero-section {
-    height: 300px;       /* yahan bilkul ~300px */
+    height: 300px;       
   }
 
   .hero-content {
@@ -389,44 +376,38 @@
 
  /*moviingggggggggg logoo*/
  .logo-strip {
-  background: #ffffff;         /* optional */
+  background: #ffffff;          
   padding: 30px 0;
   overflow: hidden;
 }
-
-/* har line */
+ 
 .logo-row {
   overflow: hidden;
   white-space: nowrap;
   margin-bottom: 15px;
   position: relative;
 }
-
-/* moving track */
+ 
 .logo-track {
   display: inline-flex;
   align-items: center;
   gap: 40px;
 }
-
-/* logos style */
+ 
 .logo-track img {
-  height: 40px;            /* logo size */
+  height: 40px;            
   width: auto; 
   opacity: 0.9;
 }
-
-/* Line 1: left → right (but we fake it with reversed direction) */
+ 
 .logo-row-left .logo-track {
   animation: marquee-left 8s linear infinite;
 }
-
-/* Line 2: right → left */
+ 
 .logo-row-right .logo-track {
   animation: marquee-right 8s linear infinite;
 }
-
-/* seamless loop: move by half width only (50%) */
+ 
 @keyframes marquee-right {
   0% {
     transform: translateX(0);
@@ -435,8 +416,7 @@
     transform: translateX(-50%);
   }
 }
-
-/* opposite direction (left → right look) */
+ 
 @keyframes marquee-left {
   0% {
     transform: translateX(-50%);
@@ -459,16 +439,14 @@
   font-size: 2rem;
   margin-bottom: 30px;
 }
-
-/* grid of cards */
+ 
 .services-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
-
-/* card style */
+ 
 .service-card {
   position: relative;
   width: 200px;
@@ -477,10 +455,9 @@
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  background: #ffffff;              /* fallback */
+  background: #ffffff;               
 }
-
-/* background image layer (default) */
+ 
 .service-bg {
   position: absolute;
   inset: 0;
@@ -488,8 +465,7 @@
   background-position: center;
   z-index: 1;
 }
-
-/* DIFFERENT IMAGE PER CARD */
+ 
 .card-1 .service-bg {
   background-image: url("./images/web.webp");
 }
@@ -517,16 +493,14 @@
 .card-7 .service-bg {
   background-image: url("./images/5c77ba78b22044d5ba75652b75559eec.webp");
 }
-
-/* dark overlay on image */
+ 
 .service-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);   /* dark filter */
+  background: rgba(0, 0, 0, 0.45);    
   z-index: 2;
 }
-
-/* service text */
+ 
 .service-name {
   background: none;
   position: relative;
@@ -538,8 +512,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
-/* actions buttons */
+ 
 .services-actions {
   margin-top: 25px;
   display: flex;
@@ -547,9 +520,7 @@
   gap: 10px;
 }
 
-/* ============================
-   RESPONSIVE: TABLET / MOBILE
-   ============================ */
+ 
 @media (max-width: 992px) {
   .services-section {
     padding: 40px 16px;
@@ -564,8 +535,7 @@
     font-size: 1rem;
   }
 }
-
-/* Mobile – 2 cards per row */
+ 
 @media (max-width: 768px) {
 
   .services-grid {
@@ -573,7 +543,7 @@
   }
 
   .service-card {
-    width: calc(50% - 20px);   /* 2 cards per row with gap */
+    width: calc(50% - 20px);    
     height: 240px;
   }
 
@@ -582,8 +552,7 @@
     top: 18px;
   }
 }
-
-/* Very small screens */
+ 
 @media (max-width: 480px) {
 
   .services-section {
@@ -591,7 +560,7 @@
   }
 
   .service-card {
-    width: calc(50% - 14px);   /* still 2 cards per row */
+    width: calc(50% - 14px);    
     height: 220px;
   }
 
@@ -601,21 +570,20 @@
   }
 }
 
-
-/* INDUSTRIES / IMPACT SECTION */
+ 
 .industries-section {
   padding: 70px 20px 90px;
-  background:none;       /* light background like your screenshot */
+  background:none;        
   color: #0b0b0b;
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* optional small preview of the screenshot you provided */
+ 
 .industries-preview {
   display: flex;
   justify-content: center;
   margin-bottom: 18px;
-  opacity: 0.08;         /* subtle - just for reference, remove if not needed */
+  opacity: 0.08;        
 }
 .industries-preview img {
   max-width: 900px;
@@ -623,8 +591,7 @@
   height: auto;
   border-radius: 6px;
 }
-
-/* big centered title */
+ 
 .industries-title {
   font-size: 38px;
   line-height: 1;
@@ -634,18 +601,16 @@
   margin: 12px auto 48px;
   max-width: 1100px;
 }
-
-/* grid: 2 columns desktop, 1 column mobile */
+ 
 .industries-grid {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px 60px;  /* vertical gap, horizontal gap */
+  gap: 30px 60px;   
   align-items: start;
 }
-
-/* single industry row item */
+ 
 .industry-item {
   display: flex;
   align-items: center;
@@ -654,8 +619,7 @@
   position: relative;
   min-height: 48px;
 }
-
-/* thin full-width separator line under each item */
+ 
 .industry-item::after {
   content: "";
   position: absolute;
@@ -665,33 +629,29 @@
   height: 1px;
   background: rgba(0,0,0,0.12);
 }
-
-/* icon style (use your svg/png icons) */
+ 
 .industry-icon {
   width: 34px;
   height: 34px;
   flex: 0 0 34px;
   object-fit: contain;
-  filter: hue-rotate(140deg) saturate(.9) brightness(1.05); /* subtle teal tint */
+  filter: hue-rotate(140deg) saturate(.9) brightness(1.05); 
 }
-
-/* text */
+ 
 .industry-text {
   font-size: 18px;
   font-weight: normal;
   color: #0b0b0b;
 }
-
-/* spacing tweak for right column to look like screenshot (icons are slightly to the left) */
+ 
 .industries-grid > .industry-item:nth-child(2n) .industry-icon {
   margin-left: 6px;
 }
-
-/* responsive */
+ 
 @media (max-width: 900px) {
   .industries-title { font-size: 36px; margin-bottom: 24px; }
   .industries-grid { grid-template-columns: 1fr; gap: 18px; padding: 0 12px; }
-  .industries-preview { display: none; } /* hide preview on mobile */
+  .industries-preview { display: none; } 
 }
 
 #viewMoreBtn{
@@ -766,8 +726,7 @@ width: 170px;
   position: relative;
   gap: 30px;
 }
-
-/* LEFT TEXT */
+ 
 .left-text {
   flex: 1;
   padding-right: 20px;
@@ -784,11 +743,11 @@ width: 170px;
   font-size: 22px;
   line-height: 1.5;
   background: linear-gradient(90deg, rgb(8, 37, 37), rgb(17, 17, 58));
-  -webkit-background-clip: text;
+  -webkit-background-clip : text;
   -webkit-text-fill-color: transparent;
 }
 
-/* RIGHT CARDS TRIANGLE GRID */
+ 
 .right-cards {
   flex: 2;
   display: grid;
@@ -798,8 +757,7 @@ width: 170px;
     "e f f";
   grid-gap: 20px;
 }
-
-/* card style */
+ 
 .card {
   position: relative;
   border-radius: 10px;
@@ -815,16 +773,14 @@ width: 170px;
   background-size: cover;
   background-position: center;
 }
-
-/* DIFFERENT IMAGES */
+ 
 .card:nth-child(1) { background-image: url('./images/89ae8d0a3f114581ae738349a314cd06.webp'); }
 .card:nth-child(2) { background-image: url('./images/team.webp'); }
 .card:nth-child(3) { background-image: url('./images/network.webp'); }
 .card:nth-child(4) { background-image: url('./images/sat.webp'); }
 .card:nth-child(5) { background-image: url('./images/app.webp'); }
 .card:nth-child(6) { background-image: url('./images/app.webp'); }
-
-/* overlay */
+ 
 .card::before {
   content: "";
   position: absolute;
@@ -832,8 +788,7 @@ width: 170px;
   background: rgba(0,0,0,0.35);
   z-index: 1;
 }
-
-/* text */
+ 
 .card h3 {
   position: relative;
   z-index: 2;
@@ -844,18 +799,14 @@ width: 170px;
 }
 
 .card:hover { transform: translateY(-8px); }
-
-/* grid mapping */
+ 
 .card:nth-child(1) { grid-area: a; }
 .card:nth-child(2) { grid-area: b; }
 .card:nth-child(3) { grid-area: c; }
 .card:nth-child(4) { grid-area: d; }
 .card:nth-child(5) { grid-area: e; }
 .card:nth-child(6) { grid-area: f; }
-
-/* =========================
-   MOBILE (<768px)
-========================= */
+ 
 @media (max-width: 768px) {
   .section {
     padding: 30px 20px;
@@ -865,8 +816,7 @@ width: 170px;
 
   .left-text h1 { font-size: 32px; }
   .left-text p { font-size: 16px; }
-
-  /* triangle grid with smaller cards */
+ 
   .right-cards {
     display: grid;
     grid-template-areas:
@@ -877,8 +827,7 @@ width: 170px;
     grid-auto-rows: minmax(90px, auto);
     grid-gap: 12px;
   }
-
-  /* card size smaller for mobile */
+ 
   .card {
     min-height: 90px;
     padding: 10px;
@@ -886,8 +835,7 @@ width: 170px;
 
   .card h3 { font-size: 14px; }
 }
-
-/* VERY SMALL SCREENS (<480px) */
+ 
 @media (max-width: 480px) {
   .section { padding: 25px 15px; }
 
@@ -967,7 +915,7 @@ width: 170px;
     background: none;
   font-size: 32px;
   font-weight: bold;
-  color: rgb(17, 17, 58); /*  color */
+  color: rgb(17, 17, 58);  
 }
 
 .stat .desc {
@@ -985,7 +933,7 @@ width: 170px;
   flex-wrap: wrap;
   padding: 30px 20px;
   gap: 50px;
-  background-color: #ffffff; /* light background for contrast */
+  background-color: #ffffff;  
   align-items: center;
 }
 
@@ -1040,7 +988,8 @@ width: 170px;
   background: rgb(17, 17, 58);
   transform: translateY(-3px);
 }
-/*CEOOOOOOOOOOOOOooo*/.ceo-section {
+/*CEOOOOOOOOOOOOOooo*/
+.ceo-section {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
@@ -1145,7 +1094,7 @@ height: 30px;
 }
   /*ontactttttttttttttttt*/
 
-    /* Yeh ID specific hai, isliye baaki site ko kharab nahi karega */
+     
         #unique-contact-section input:focus,
         #unique-contact-section select:focus,
         #unique-contact-section textarea:focus {
@@ -1167,8 +1116,7 @@ height: 30px;
         #unique-contact-section a.learn-btn:hover {
             gap: 12px !important;
         }
-
-        /* Mobile Responsive Helper */
+ 
         @media (max-width: 900px) {
             #unique-contact-section {
                 padding: 40px 20px !important;
@@ -1187,7 +1135,7 @@ body {
   background-color: #ffffff;
   color: #333;
   font-family: Arial, sans-serif;
-  border-top: 4px solid  rgb(17, 17, 58); /*  rgb(17, 17, 58) top border */
+  border-top: 4px solid  rgb(17, 17, 58); 
   width: 100%;
   padding: 60px 40px 30px 40px;
   box-sizing: border-box;
@@ -1208,7 +1156,7 @@ body {
 
 .footer-block h3 {
   font-size: 20px;
-  color:  rgb(17, 17, 58); /*  rgb(17, 17, 58) headings */
+  color:  rgb(17, 17, 58); 
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1282,40 +1230,37 @@ body {
 /*whatsappppppp*/
  .whatsapp-btn {
             position: fixed;
-            bottom: 40px;  /* Neeche se gap */
-            right: 40px;   /* Right side se gap */
+            bottom: 40px;   
+            right: 40px;    
             width: 60px;
             height: 60px;
-            background-color: #25d366; /* WhatsApp Green */
+            background-color: #25d366; 
             color: white;
             border-radius: 50%;
             text-align: center;
             box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 9999; /* Sabse upar dikhega */
+            z-index: 9999;  
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
             text-decoration: none;
-            
-            /* Animation */
+             
             animation: pulse-animation 2s infinite;
         }
 
         .whatsapp-btn:hover {
-            background-color: #1ebe57; /* Thoda dark green hover pe */
-            transform: scale(1.1); /* Thoda bada hoga */
+            background-color: #1ebe57;  
+            transform: scale(1.1);  
             box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.6);
         }
-
-        /* SVG Icon Styling */
+ 
         .whatsapp-icon {
             width: 35px;
             height: 35px;
             fill: white;
         }
-
-        /* Pulse Animation Keyframes */
+ 
         @keyframes pulse-animation {
             0% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
@@ -1327,8 +1272,7 @@ body {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
             }
         }
-
-        /* --- Mobile Responsive --- */
+ 
         @media (max-width: 768px) {
             .whatsapp-btn {
                 width: 50px;
