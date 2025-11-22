@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offcanvas Navbar Example</title>
+  <title>CodedClouds</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link
@@ -13,45 +13,57 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
 
     <!-- Left: Logo -->
     <div class="logo"></div>
 
     <!-- Center: Offcanvas buttons -->
-    <div class="mx-auto d-flex gap-2">
-      <button class="btn btn-primary" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas1" aria-controls="offcanvas1">
+    <!-- Added wrapper class 'center-nav-container' for better control -->
+    <div class="center-nav-container d-flex gap-2">
+      <button class="btn" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDo" aria-controls="offcanvasDo">
         WHAT WE DO
       </button>
-      <button class="btn btn-primary" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas2" aria-controls="offcanvas2">
+      <button class="btn" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHelp" aria-controls="offcanvasHelp">
         WHO WE HELP
       </button>
-      <button class="btn btn-primary" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas3" aria-controls="offcanvas3">
+      <button class="btn" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWho" aria-controls="offcanvasWho">
         WHO WE ARE
       </button>
-      <button class="btn btn-primary" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas4" aria-controls="offcanvas4">
+      <button class="btn" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasJoin" aria-controls="offcanvasJoin">
         JOIN US
       </button>
     </div>
 
     <!-- Right: Extra buttons -->
-    <div class="d-flex gap-2">
-      <button class="btn btn-outline-primary" id="nav-career" >EXPLORE CAREERS</button>
-      <button class="btn btn-outline-success" id="nav-talk" >TALK TO BUSINESS</button>
+    <div class="right-nav-container d-flex gap-2">
+        <a href="#service" style="text-decoration: none; width: 150px;">
+      <button class="btn" id="nav-career">EXPLORE CAREERS</button></a>
+      <a href="#contact" style="text-decoration: none; width: 150px;">
+      <button class="btn" id="nav-talk" style="text-decoration: none; width: 150px;">TALK TO BUSINESS</button></a>
     </div>
 
   </div>
 </nav>
-
+<!-- Link mein number daal diya hai: 966557385262 -->
+    <a href="https://wa.me/966557385262" class="whatsapp-btn" target="_blank" title="Chat on WhatsApp">
+        <!-- WhatsApp SVG Icon (No external link needed) -->
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.463 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
 <!--hero-->
 <section class="hero-section">
   <video autoplay muted loop class="hero-video">
-    <source src="./images/hero.mp4" type="video/mp4">
+    <source src="./images/hero.webm" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
 
@@ -60,7 +72,7 @@
 
   <!-- Content -->
   <div class="hero-content">
-    <h1>CodedClouds Engineering Your Digital Future</h1>
+    <h1>Transforming Ideas into Reality</h1>
     <p>Web, App & Software Development · FinTech Solutions · Hospital Attendance Systems · CRM</p>
     <button class="btn btn-primary btn-lg" id="get-in-touch">Get in Touch</button>
   </div>
@@ -73,17 +85,17 @@
   <div class="logo-row logo-row-left">
     <div class="logo-track">
       <!-- set 1 -->
-      <img src="./images/misbar.jpg" alt="Logo 1">
-      <img src="./images/TCS.jpg" alt="Logo 2">
-      <img src="./images/misbar.jpg" alt="Logo 3">
-      <img src="./images/misbar.jpg" alt="Logo 4">
-      <img src="./images/TCS.jpg" alt="Logo 5">
+      <img src="./images/misbar.webp" alt="Logo 1">
+      <img src="./images/TCS.webp" alt="Logo 2">
+      <img src="./images/PRO.webp" alt="Logo 3">
+      <img src="./images/misbar.webp" alt="Logo 4">
+      <img src="./images/TCS.webp" alt="Logo 5">
       <!-- set 2 (same again for seamless loop) -->
-      <img src="./images/misbar.jpg" alt="Logo 1">
-      <img src="./images/TCS.jpg" alt="Logo 2">
-      <img src="./images/misbar.jpg" alt="Logo 3">
-      <img src="./images/TCS.jpg" alt="Logo 4">
-      <img src="./images/misbar.jpg" alt="Logo 5">
+      <img src="./images/PRO.webp" alt="Logo 1">
+      <img src="./images/misbar.webp" alt="Logo 2">
+      <img src="./images/TCS.webp" alt="Logo 3">
+      <img src="./images/PRO.webp" alt="Logo 4">
+      <img src="./images/misbar.webp" alt="Logo 5">
     </div>
   </div>
 
@@ -91,81 +103,83 @@
   <div class="logo-row logo-row-right">
     <div class="logo-track">
       <!-- set 1 -->
-      <img src="./images/TCS.jpg" alt="Logo 6">
-      <img src="./images/misbar.jpg" alt="Logo 7">
-      <img src="./images/TCS.jpg" alt="Logo 8">
-      <img src="./images/misbar.jpg" alt="Logo 9">
-      <img src="./images/TCS.jpg" alt="Logo 10">
-      <!-- set 2 (same again) -->
-      <img src="./images/misbar.jpg" alt="Logo 6">
-      <img src="./images/TCS.jpg" alt="Logo 7">
-      <img src="./images/misbar.jpg" alt="Logo 8">
-      <img src="./images/TCS.jpg" alt="Logo 9">
-      <img src="./images/misbar.jpg" alt="Logo 10">
+     <img src="./images/misbar.webp" alt="Logo 1">
+      <img src="./images/TCS.webp" alt="Logo 2">
+      <img src="./images/PRO.webp" alt="Logo 3">
+      <img src="./images/misbar.webp" alt="Logo 4">
+      <img src="./images/TCS.webp" alt="Logo 5">
+      <!-- set 2 (same again for seamless loop) -->
+      <img src="./images/PRO.webp" alt="Logo 1">
+      <img src="./images/misbar.webp" alt="Logo 2">
+      <img src="./images/TCS.webp" alt="Logo 3">
+      <img src="./images/PRO.webp" alt="Logo 4">
+      <img src="./images/misbar.webp" alt="Logo 5">
+    </div>
     </div>
   </div>
 </section>
 <!--serviceee-->
 
-<section class="services-section">
+<section class="services-section" id="service">
   <h2 class="services-title">Transform Your Business</h2>
 
   <div class="services-grid">
     <!-- Card 1 -->
-    <div class="service-card">
+    <div class="service-card card-1">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">WEB DEVELOPMENT</span>
     </div>
 
     <!-- Card 2 -->
-    <div class="service-card">
+    <div class="service-card card-2">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">APP DEVELOPMENT</span>
     </div>
 
     <!-- Card 3 -->
-    <div class="service-card">
+    <div class="service-card card-3">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">PMS DEVELOPMENT</span>
     </div>
 
     <!-- Card 4 (hidden initially) -->
-    <div class="service-card extra-service d-none">
+    <div class="service-card extra-service card-4 d-none">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
-      <span class="service-name">DIGITAL MARKATING</span>
+      <span class="service-name">DIGITAL MARKETING</span>
     </div>
 
     <!-- Card 5 (hidden initially) -->
-    <div class="service-card extra-service d-none">
+    <div class="service-card extra-service card-5 d-none">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">FULL CRM</span>
     </div>
 
     <!-- Card 6 (hidden initially) -->
-    <div class="service-card extra-service d-none">
+    <div class="service-card extra-service card-6 d-none">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">POS SOFTWARE</span>
     </div>
 
     <!-- Card 7 (hidden initially) -->
-    <div class="service-card extra-service d-none">
+    <div class="service-card extra-service card-7 d-none">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
-      <span class="service-name">ECOMERENCE SERVICES</span>
+      <span class="service-name">ECOMMERCE SERVICES</span>
     </div>
   </div>
 
   <div class="services-actions">
-    <button id="viewMoreBtn" class="btn btn-primary"  >View More</button>
-    <button id="viewLessBtn" class="btn btn-outline-secondary d-none"  >View Less</button>
+    <button id="viewMoreBtn" class="btn btn-primary">View More</button>
+    <button id="viewLessBtn" class="btn btn-outline-secondary d-none">View Less</button>
   </div>
 </section>
+
 <!--industryy-->
 <!-- Industries / Impact section -->
 <section class="industries-section">
@@ -215,7 +229,7 @@
   
 </section>
  <div class="btn">
-    <button class="btn btn-outline-primary" id="industry-btn" >EXPLORE CAREERS</button>
+    <a href="#activements" style="text-decoration: none; width: 150px;"><button class="btn btn-outline-primary" id="industry-btn" >EXPLORE MORE</button></a>
  </div>
 
  <!--our story-->
@@ -226,18 +240,18 @@
     <p>Discover our amazing journeys and experiences. Each story shares a unique perspective and insight, connecting us through moments that matter.</p>
   </div>
 
-  <div class="right-cards"  >
-    <div class="card"><h3>Story 1</h3></div>
-    <div class="card"><h3>Story 2</h3></div>
-    <div class="card"><h3>Story 3</h3></div>
-    <div class="card"><h3>Story 4</h3></div>
-    <div class="card"><h3>Story 5</h3></div>
-    <div class="card"><h3>Story 6</h3></div>
+  <div class="right-cards">
+    <div class="card card-1"><h3>CASE STUDY</h3></div>
+    <div class="card card-2"><h3>TEAM WORK</h3></div>
+    <div class="card card-3"><h3>MArketing</h3></div>
+    <div class="card card-4"><h3>MOBILE DESIGN</h3></div>
+    <div class="card card-5"><h3>ATTENDENCE APPLICATIONS</h3></div>
+    <div class="card card-6"><h3>custom Applications</h3></div>
   </div>
-</section>\
+</section>
 
 <!--ssssssss-->
-<section class="achievements-section">
+<section class="achievements-section" id="activements">
   <div class="achievements-left">
     <h1>Pioneering Trust and Innovation</h1>
     <h2>Codedcloud's Achievements</h2>
@@ -272,7 +286,7 @@
 <section class="careers-section">
   <div class="careers-left">
     <video autoplay muted loop playsinline width="100%" style="border-radius: 15px;">
-      <source src="./images/usss.mp4" type="video/mp4">
+      <source src="./images/usss.webm" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
@@ -281,51 +295,58 @@
     <h1>Careers</h1>
     <p><strong style="background: none;">Human-first is our foundation.</strong><br>
     Join a culture that celebrates excellence and diversity, Globally!</p>
-    <button class="join-btn">Join Us</button>
+    <a href="#contact" style="text-decoration: none; width: 150px;"><button class="join-btn">Join Us</button></a>
   </div>
   <!---->
   <section class="ceo-section">
   <div class="ceo-left">
     <h1 style="background: none;">OUR GLOBAL LEADER / CEO</h1>
+    <h4>At CodedCloud, we believe that technology is the bridge between vision and reality. Our mission is to empower businesses globally with innovative digital solutions that drive growth and efficiency. We are not just building software; we are engineering the future of your business.</h4>
   </div>
 
   <div class="ceo-right">
-    <img src="/image1.png" alt="CEO Hashim" class="ceo-pic">
-    <h3 class="ceo-name">HASHIM</h3>
-    <a href="https://www.linkedin.com/in/hashim" target="_blank" title="HASHIM" class="linkedin-icon">
+    <img src="./images/CEO.webp" alt="CEO Hashim" class="ceo-pic">
+    <h3 class="ceo-name">HASHIM SAQIB</h3>
+    <a href="https://www.linkedin.com/in/hashim-saqib-205527371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="HASHIM" class="linkedin-icon">
       <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
     </a>
   </div>
 </section>
 <!---->
-<section class="contact-section">
-  <div class="contact-left">
-    <h1>Ready To Get Started</h1>
-    <p>Connect with us to explore how we can deliver exceptional IT solutions for your needs.</p>
+<!-- Wrapper Class for Scope -->
+    <div class="contact-section-wrapper" id="contact">
+        <section class="contact-section">
+            <!-- Left Side: Form -->
+            <div class="contact-left" data-aos="fade-up">
+                <h1>Ready To Get Started</h1>
+                <p>Connect with us to explore how we can deliver exceptional IT solutions.</p>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="user_name" placeholder="Your Name" required>
+                    <input type="email" name="user_email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="3" required></textarea>
+                    
+                    <button type="submit" id="submitBtn">Submit</button>
+                    <div id="status-message"></div>
+                </form>
+            </div>
 
-  <div class="contact-right">
-    <div class="info-block">
-      <h2>Earth</h2>
-      <h3>Global Presence</h3>
-      <p>We're across 5 continents, explore our office nearest to you.</p>
-      <a href="#" class="learn-btn">Learn more</a>
-    </div>
-    <div class="info-block">
-      <h2>People</h2>
-      <h3>Global Leaders</h3>
-      <p>Our capability and competencies are backed by diverse Global leadership.</p>
-      <a href="#" class="learn-btn">Learn more</a>
-    </div>
-  </div>
-</section>
+            <!-- Right Side: Info -->
+            <div class="contact-right" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-block">
+                    <h2>Earth</h2>
+                    <h3>Global Presence</h3>
+                    <p>We're across 5 continents, explore our office nearest to you.</p>
+                    <a href="#" class="learn-btn">Learn more <span>&rarr;</span></a>
+                </div>
+                <div class="info-block">
+                    <h2>People</h2>
+                    <h3>Global Leaders</h3>
+                    <p>Our capability and competencies are backed by diverse Global leadership.</p>
+                    <a href="#" class="learn-btn">Learn more <span>&rarr;</span></a>
+                </div>
+            </div>
+        </section>
 <!---->
 <footer class="site-footer">
   <div class="footer-container">
@@ -333,6 +354,8 @@
     <div class="footer-block">
       <h3>Contact Us</h3>
       <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
+      <a href="mailto:info@example.com">+966-557385262</a>
+      <a href="mailto:info@example.com">+92 302 5815858</a>
     </div>
 
     <!-- Block 2: Quick Links -->
@@ -341,18 +364,23 @@
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Services</a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
 
     <!-- Block 3: Social -->
     <div class="footer-block">
       <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="#" title="LinkedIn"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
-        <a href="#" title="Twitter"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
-        <a href="#" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-      </div>
+     <div class="social-icons">
+  <a href="https://www.linkedin.com/in/hashim-saqib-205527371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" title="LinkedIn" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61584082650845" title="Facebook" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+  </a>
+</div>
+
     </div>
   </div>
 
@@ -360,51 +388,153 @@
     <p>&copy; 2025 Your Company. All rights reserved.</p>
   </div>
 </footer>
-<!-- Offcanvas 1 -->
-<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvas1" aria-labelledby="offcanvas1Label">
+<!-- ================= OFFCANVAS SECTIONS ================= -->
+
+<!-- 1. WHAT WE DO -->
+<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvasDo" aria-labelledby="offcanvasDoLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvas1Label">WHAT WE DO</h5>
+    <h5 class="offcanvas-title" id="offcanvasDoLabel">WHAT WE DO</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <p>Content for WHAT WE DO</p>
+  <div class="offcanvas-body offcanvas-content">
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Development</h4>
+            <ul>
+                <li>Web Development</li>
+                <li>Mobile App Development</li>
+                <li>Custom Software Solutions</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h4>Business Solutions</h4>
+            <ul>
+                <li>PMS (Property Management Systems)</li>
+                <li>Full CRM Integrations</li>
+                <li>POS Software</li>
+                <li>E-commerce Platforms</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h4>Growth</h4>
+            <ul>
+                <li>Digital Marketing Strategies</li>
+                <li>SEO & Branding</li>
+                <li>IT Consultancy</li>
+            </ul>
+        </div>
+    </div>
   </div>
 </div>
 
-<!-- Offcanvas 2 -->
-<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvas2" aria-labelledby="offcanvas2Label">
+<!-- 2. WHO WE HELP -->
+<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvasHelp" aria-labelledby="offcanvasHelpLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvas2Label">WHO WE HELP</h5>
+    <h5 class="offcanvas-title" id="offcanvasHelpLabel">WHO WE HELP</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <p>Content for WHO WE HELP</p>
+  <div class="offcanvas-body offcanvas-content">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Industries</h4>
+            <p>We empower businesses across diverse sectors including Retail, Healthcare, Real Estate, and Education to achieve digital transformation.</p>
+        </div>
+        <div class="col-md-6">
+            <h4>Our Partners</h4>
+            <ul>
+                <li>Startups looking to scale</li>
+                <li>SMEs needing automation</li>
+                <li>Enterprises seeking robust IT infrastructure</li>
+            </ul>
+        </div>
+    </div>
   </div>
 </div>
 
-<!-- Offcanvas 3 -->
-<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvas3" aria-labelledby="offcanvas3Label">
+<!-- 3. WHO WE ARE -->
+<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvasWho" aria-labelledby="offcanvasWhoLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvas3Label">WHO WE ARE</h5>
+    <h5 class="offcanvas-title" id="offcanvasWhoLabel">WHO WE ARE</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <p>Content for WHO WE ARE</p>
+  <div class="offcanvas-body offcanvas-content">
+    <div class="row">
+        <div class="col-md-8">
+            <h4>About CodedCloud</h4>
+            <p>CodedCloud is a premier IT solutions provider with a strong global presence in <strong>Saudi Arabia</strong> and <strong>Pakistan</strong>. We are a team of innovators, developers, and strategists dedicated to delivering excellence.</p>
+            <p>Our capability and competencies are backed by diverse global leadership, ensuring world-class standards in every project we undertake.</p>
+        </div>
+        <div class="col-md-4">
+            <h4>Our Mission</h4>
+            <p>To simplify complex business problems with elegant, efficient, and scalable technology solutions.</p>
+        </div>
+    </div>
   </div>
 </div>
 
-<!-- Offcanvas 4 -->
-<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvas4" aria-labelledby="offcanvas4Label">
+<!-- 4. JOIN US -->
+<div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvasJoin" aria-labelledby="offcanvasJoinLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvas4Label">JOIN US</h5>
+    <h5 class="offcanvas-title" id="offcanvasJoinLabel">JOIN US</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body">
-    <p>Content for JOIN US</p>
+  <div class="offcanvas-body offcanvas-content">
+    <div class="row justify-content-center text-center">
+        <div class="col-md-8">
+            <h4>Build Your Career With Us</h4>
+            <p>Are you passionate about technology? Do you want to work on challenging projects with a global team?</p>
+            <p>We are always looking for talented:</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+                <span class="badge bg-primary p-2">Full Stack Developers</span>
+                <span class="badge bg-primary p-2">UI/UX Designers</span>
+                <span class="badge bg-primary p-2">Marketing Gurus</span>
+            </div>
+            <button class="btn btn-outline-dark">View Open Positions</button>
+            <p class="mt-3 text-muted small">Send your CV to: careers@codedcloud.com</p>
+        </div>
+    </div>
   </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script type="text/javascript">
+        AOS.init({ duration: 800, once: true });
+
+        (function() {
+            emailjs.init("xzBpQi5U68rp562Lu"); 
+        })();
+
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const statusMsg = document.getElementById("status-message");
+            const btn = document.getElementById("submitBtn");
+            const originalBtnText = btn.innerText;
+
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+            statusMsg.innerText = "";
+
+            emailjs.sendForm("service_kkw0omk", "template_t4n5g19", this)
+                .then(() => {
+                    statusMsg.innerText = "✅ Sent successfully!";
+                    statusMsg.className = "success-msg";
+                    this.reset();
+                })
+                .catch((err) => {
+                    statusMsg.innerText = "❌ Failed. Try again.";
+                    statusMsg.className = "error-msg";
+                    console.error(err);
+                })
+                .finally(() => {
+                    btn.innerText = originalBtnText;
+                    btn.disabled = false;
+                });
+        });
+    </script>
 <script src="script.js"></script>
 </body>
 </html>

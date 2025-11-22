@@ -71,4 +71,34 @@
       viewMoreBtn.classList.remove("d-none"); // show "View More"
     });
   });
+
+
+  AOS.init({ duration: 1000 });
+
+
+(function() {
+emailjs.init("xzBpQi5U68rp562Lu");
+})();
+
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+e.preventDefault();
+
+
+const errorField = document.getElementById("error");
+const successField = document.getElementById("success");
+
+
+emailjs.sendForm("service_kkw0omk", "template_t4n5g19", this)
+.then(() => {
+successField.innerText = "✅ Email sent successfully!";
+errorField.innerText = "";
+this.reset();
+})
+.catch((err) => {
+errorField.innerText = "❌ Failed to send email. Please try again.";
+successField.innerText = "";
+console.error("Error:", err);
+});
+});
  
