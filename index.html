@@ -6,6 +6,8 @@
   <title>CodedClouds</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
   <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -46,7 +48,7 @@
     <!-- Right: Extra buttons -->
     <div class="right-nav-container d-flex gap-2">
         <a href="#service" style="text-decoration: none; width: 150px;">
-      <button class="btn" id="nav-career">EXPLORE CAREERS</button></a>
+      <button class="btn" id="nav-career" style="width: 150px;">EXPLORE CAREERS</button></a>
       <a href="#contact" style="text-decoration: none; width: 150px;">
       <button class="btn" id="nav-talk" style="text-decoration: none; width: 150px;">TALK TO BUSINESS</button></a>
     </div>
@@ -61,7 +63,7 @@
         </svg>
     </a>
 <!--hero-->
-<section class="hero-section">
+<section class="hero-section" data-aos="fade-up">
   <video autoplay muted loop class="hero-video">
     <source src="./images/hero.webm" type="video/mp4">
     Your browser does not support HTML5 video.
@@ -71,31 +73,31 @@
   <div class="overlay"></div>
 
   <!-- Content -->
-  <div class="hero-content">
+  <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
     <h1>Transforming Ideas into Reality</h1>
     <p>Web, App & Software Development · FinTech Solutions · Hospital Attendance Systems · CRM</p>
-    <button class="btn btn-primary btn-lg" id="get-in-touch">Get in Touch</button>
+    <a href="#contact"style="text-decoration: none; "><button class="btn btn-primary btn-lg" id="get-in-touch">Get in Touch</button></a>
   </div>
 </section>
 
 <!--moving logos-->
  
-<section class="logo-strip">
+<section class="logo-strip" data-aos="fade-up">
   <!-- Line 1: left → right -->
   <div class="logo-row logo-row-left">
     <div class="logo-track">
       <!-- set 1 -->
-      <img src="./images/misbar.webp" alt="Logo 1">
-      <img src="./images/TCS.webp" alt="Logo 2">
-      <img src="./images/PRO.webp" alt="Logo 3">
+      <img src="./images/misbar.webp" alt="Logo 1" data-aos="fade-up">
+      <img src="./images/TCS.webp" alt="Logo 2" data-aos="fade-up">
+      <img src="./images/PRO.webp" alt="Logo 3" data-aos="fade-up">
       <img src="./images/misbar.webp" alt="Logo 4">
       <img src="./images/TCS.webp" alt="Logo 5">
       <!-- set 2 (same again for seamless loop) -->
       <img src="./images/PRO.webp" alt="Logo 1">
       <img src="./images/misbar.webp" alt="Logo 2">
-      <img src="./images/TCS.webp" alt="Logo 3">
-      <img src="./images/PRO.webp" alt="Logo 4">
-      <img src="./images/misbar.webp" alt="Logo 5">
+      <img src="./images/TCS.webp" alt="Logo 3" data-aos="fade-up">
+      <img src="./images/PRO.webp" alt="Logo 4" data-aos="fade-up">
+      <img src="./images/misbar.webp" alt="Logo 5" data-aos="fade-up">
     </div>
   </div>
 
@@ -111,49 +113,49 @@
       <!-- set 2 (same again for seamless loop) -->
       <img src="./images/PRO.webp" alt="Logo 1">
       <img src="./images/misbar.webp" alt="Logo 2">
-      <img src="./images/TCS.webp" alt="Logo 3">
-      <img src="./images/PRO.webp" alt="Logo 4">
-      <img src="./images/misbar.webp" alt="Logo 5">
+      <img src="./images/TCS.webp" alt="Logo 3" data-aos="fade-up">
+      <img src="./images/PRO.webp" alt="Logo 4" data-aos="fade-up">
+      <img src="./images/misbar.webp" alt="Logo 5" data-aos="fade-up">
     </div>
     </div>
   </div>
 </section>
 <!--serviceee-->
 
-<section class="services-section" id="service">
+<section class="services-section" id="service" data-aos="fade-up">
   <h2 class="services-title">Transform Your Business</h2>
 
   <div class="services-grid">
     <!-- Card 1 -->
-    <div class="service-card card-1">
+    <div class="service-card card-1" data-aos="fade-left">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">WEB DEVELOPMENT</span>
     </div>
 
     <!-- Card 2 -->
-    <div class="service-card card-2">
+    <div class="service-card card-2" data-aos="fade-up">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">APP DEVELOPMENT</span>
     </div>
 
     <!-- Card 3 -->
-    <div class="service-card card-3">
+    <div class="service-card card-3" data-aos="fade-right">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">PMS DEVELOPMENT</span>
     </div>
 
     <!-- Card 4 (hidden initially) -->
-    <div class="service-card extra-service card-4 d-none">
+    <div class="service-card extra-service card-4 d-none" data-aos="fade-right">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">DIGITAL MARKETING</span>
     </div>
 
     <!-- Card 5 (hidden initially) -->
-    <div class="service-card extra-service card-5 d-none">
+    <div class="service-card extra-service card-5 d-none" data-aos="fade-right">
       <div class="service-bg"></div>
       <div class="service-overlay"></div>
       <span class="service-name">FULL CRM</span>
@@ -175,52 +177,52 @@
   </div>
 
   <div class="services-actions">
-    <button id="viewMoreBtn" class="btn btn-primary">View More</button>
-    <button id="viewLessBtn" class="btn btn-outline-secondary d-none">View Less</button>
+    <button id="viewMoreBtn" class="btn btn-primary"  data-aos="fade-up">View More</button>
+    <button id="viewLessBtn" class="btn btn-outline-secondary d-none" data-aos="fade-up">View Less</button>
   </div>
 </section>
 
 <!--industryy-->
 <!-- Industries / Impact section -->
-<section class="industries-section">
+<section class="industries-section"  data-aos="fade-up">
   <!-- reference preview (optional) -->
    
 
-  <h2 class="industries-title">Discover our Impact Across Industries</h2>
+  <h2 class="industries-title" data-aos="fade-left">Discover our Impact Across Industries</h2>
 
   <div class="industries-grid">
     <div class="industry-item">
       
-      <div class="industry-text">Travel & Hospitality</div>
+      <div class="industry-text" data-aos="fade-right">Travel & Hospitality</div>
     </div>
 
     <div class="industry-item">
       
-      <div class="industry-text">Public Sector</div>
+      <div class="industry-text" data-aos="fade-left">Public Sector</div>
     </div>
 
     <div class="industry-item"> 
-      <div class="industry-text">Telecommunication</div>
+      <div class="industry-text" data-aos="fade-right">Telecommunication</div>
     </div>
 
     <div class="industry-item"> 
-      <div class="industry-text">Retail & CPG</div>
+      <div class="industry-text" data-aos="fade-left">Retail & CPG</div>
     </div>
 
     <div class="industry-item"> 
-      <div class="industry-text">Oil, Gas, and Energy</div>
+      <div class="industry-text" data-aos="fade-right">Oil, Gas, and Energy</div>
     </div>
 
     <div class="industry-item"> 
-      <div class="industry-text">Startups</div>
+      <div class="industry-text" data-aos="fade-left">Startups</div>
     </div>
 
     <div class="industry-item"> 
-      <div class="industry-text">E-commerce</div>
+      <div class="industry-text" data-aos="fade-right">E-commerce</div>
     </div>
 
     <div class="industry-item"> 
-      <div class="industry-text">Banking & Fintech</div>
+      <div class="industry-text" data-aos="fade-left">Banking & Fintech</div>
     </div>
 
     
@@ -241,12 +243,12 @@
   </div>
 
   <div class="right-cards">
-    <div class="card card-1"><h3>CASE STUDY</h3></div>
-    <div class="card card-2"><h3>TEAM WORK</h3></div>
-    <div class="card card-3"><h3>MArketing</h3></div>
-    <div class="card card-4"><h3>MOBILE DESIGN</h3></div>
-    <div class="card card-5"><h3>ATTENDENCE APPLICATIONS</h3></div>
-    <div class="card card-6"><h3>custom Applications</h3></div>
+    <div class="card card-1" data-aos="fade-left"><h3>CASE STUDY</h3></div>
+    <div class="card card-2" data-aos="fade-left"><h3>TEAM WORK</h3></div>
+    <div class="card card-3" data-aos="fade-left"><h3>MARKETING</h3></div>
+    <div class="card card-4" data-aos="fade-left"><h3>MOBILE DESIGN</h3></div>
+    <div class="card card-5" data-aos="fade-left"><h3>ATTENDENCE APPLICATIONS</h3></div>
+    <div class="card card-6" data-aos="fade-left"><h3>CUCTOM APPLICATIONS</h3></div>
   </div>
 </section>
 
@@ -262,21 +264,21 @@
   <div class="achievements-right">
     <div class="stat-row">
       <div class="stat">
-        <span class="number">50+</span>
+        <span class="number" data-aos="fade-left">50+</span>
         <span class="desc">Successful Projects</span>
       </div>
       <div class="stat">
-        <span class="number">5+</span>
+        <span class="number" data-aos="fade-left">5+</span>
         <span class="desc">Countries Supported</span>
       </div>
     </div>
     <div class="stat-row">
       <div class="stat">
-        <span class="number">6+</span>
+        <span class="number" data-aos="fade-left">6+</span>
         <span class="desc">Active Clients</span>
       </div>
       <div class="stat">
-        <span class="number">5+</span>
+        <span class="number" data-aos="fade-left">5+</span>
         <span class="desc">Years of Enablement Experience</span>
       </div>
     </div>
@@ -295,22 +297,23 @@
     <h1>Careers</h1>
     <p><strong style="background: none;">Human-first is our foundation.</strong><br>
     Join a culture that celebrates excellence and diversity, Globally!</p>
-    <a href="#contact" style="text-decoration: none; width: 150px;"><button class="join-btn">Join Us</button></a>
+    <a href="#contact" style="text-decoration: none; width: 150px;" data-aos="fade-up"><button class="join-btn">Join Us</button></a>
   </div>
   <!---->
-  <section class="ceo-section">
-  <div class="ceo-left">
-    <h1 style="background: none;">OUR GLOBAL LEADER / CEO</h1>
-    <h4>At CodedCloud, we believe that technology is the bridge between vision and reality. Our mission is to empower businesses globally with innovative digital solutions that drive growth and efficiency. We are not just building software; we are engineering the future of your business.</h4>
-  </div>
+  <section class="ceo-section" id="ceo-section">
+<div class="ceo-right" data-aos="fade-right">
+<img src="./images/CEO.webp" alt="CEO Hashim" class="ceo-pic">
+<h3 class="ceo-name">HASHIM SAQIB</h3>
+<a href="https://www.linkedin.com/in/hashim-saqib-205527371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="HASHIM" class="linkedin-icon">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+</a>
+</div>
 
-  <div class="ceo-right">
-    <img src="./images/CEO.webp" alt="CEO Hashim" class="ceo-pic">
-    <h3 class="ceo-name">HASHIM SAQIB</h3>
-    <a href="https://www.linkedin.com/in/hashim-saqib-205527371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="HASHIM" class="linkedin-icon">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-    </a>
-  </div>
+
+<div class="ceo-left" data-aos="fade-up">
+<h1>OUR GLOBAL LEADER / CEO</h1>
+<h4>At CodedCloud, we believe that technology is the bridge between vision and reality. Our mission is to empower businesses globally with innovative digital solutions that drive growth and efficiency. We are not just building software; we are engineering the future of your business.</h4>
+</div>
 </section>
 <!---->
 <!-- Wrapper Class for Scope -->

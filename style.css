@@ -605,7 +605,7 @@
 /* INDUSTRIES / IMPACT SECTION */
 .industries-section {
   padding: 70px 20px 90px;
-  background: #ffffff;        /* light background like your screenshot */
+  background:none;       /* light background like your screenshot */
   color: #0b0b0b;
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
 }
@@ -1040,127 +1040,109 @@ width: 170px;
   background: rgb(17, 17, 58);
   transform: translateY(-3px);
 }
-/*CEOOOOOOOOOOOOOooo*/
-.ceo-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  padding: 60px 50px;
-  flex-wrap: wrap;
-  background: none;
-  color: #333;
-  gap: 30px;
+/*CEOOOOOOOOOOOOOooo*/.ceo-section {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 60px 50px;
+gap: 40px;
 }
 
-/* LEFT SIDE */
-.ceo-left {
-  flex: 1;
-  min-width: 250px;
-}
 
-.ceo-left h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: rgb(22, 22, 54);
-  margin: 0 0 15px 0;
-}
-
-.ceo-left h4{
-    margin-top: 10px;
-}
-.ceo-left p {
-  font-size: 18px;
-  line-height: 1.5;
-  color: rgb(50, 50, 50);
-  margin: 0;
-}
-
-/* RIGHT SIDE */
 .ceo-right {
-  flex: 1;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
 }
+
 
 .ceo-pic {
-  width: 250px;
-  height: 300px;
-  object-fit: cover;
-  margin-bottom: 10px;
-  background: none;
-  border-radius: 0;
+width: 260px;
+height: 320px;
+object-fit: cover;
+border-radius: 8px;
 }
+
 
 .ceo-name {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.linkedin-icon img {
-  width: 30px;
-  height: 30px;
-  margin-top: 5px;
-  object-fit: contain;
-}
-
-/* LINKEDIN: no hover effects */
-.linkedin-icon {
-  display: inline-block;
-  text-decoration: none;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .ceo-section {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 20px;
-  }
-
-  .ceo-left, .ceo-right {
-    width: 100%;
-    text-align: left;
-  }
-
-  .ceo-pic {
-    width: 150px;
-    height: 225px;
-  }
-
-  .ceo-name {
-    font-size: 18px;
-  }
-
-  .linkedin-icon img {
-    width: 25px;
-    height: 25px;
-  }
+font-size: 24px;
+font-weight: 700;
+margin-top: 12px;
+color: #11113a;
 }
 
 
 .linkedin-icon {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
+margin-top: 5px;
+width: 40px;
+height: 40px;
+transition: 0.3s ease;
 }
 
+
 .linkedin-icon img {
-  width: 100%;
-  height: 100%;
+width: 100%;
+height: 100%;
 }
+
 
 .linkedin-icon:hover {
-  transform: scale(1.2);
+transform: scale(1.15);
 }
 
+
+.ceo-left {
+flex: 1;
+}
+
+
+.ceo-left h1 {
+font-size: 38px;
+font-weight: bold;
+color: #11113a;
+margin-bottom: 15px;
+}
+
+
+.ceo-left h4 {
+font-size: 18px;
+line-height: 1.6;
+color: #444;
+}
+
+
+@media (max-width: 768px) {
+.ceo-section {
+flex-direction: column-reverse;
+text-align: left;
+padding: 40px 20px;
+}
+
+
+.ceo-right,
+.ceo-left {
+width: 100%;
+}
+
+
+.ceo-pic {
+width: 180px;
+height: 240px;
+}
+
+
+.ceo-name {
+font-size: 20px;
+}
+
+
+.linkedin-icon {
+width: 30px;
+height: 30px;
+}
+}
   /* --- IMPORTANT FOR INTEGRATION --- */
         /* Is section ke liye box-sizing zaroori hai taake width kharab na ho */
         .contact-section-wrapper * {
