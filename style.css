@@ -1143,203 +1143,40 @@ width: 30px;
 height: 30px;
 }
 }
-  /* --- IMPORTANT FOR INTEGRATION --- */
-        /* Is section ke liye box-sizing zaroori hai taake width kharab na ho */
-        .contact-section-wrapper * {
-            box-sizing: border-box;
-        }
+  /*ontactttttttttttttttt*/
 
-        body {
-            margin: 0;
-           font-family: 'Montserrat', sans-serif;
-            background-color: #fff;
-            overflow-x: hidden; /* Horizontal scroll rokne ke liye */
+    /* Yeh ID specific hai, isliye baaki site ko kharab nahi karega */
+        #unique-contact-section input:focus,
+        #unique-contact-section select:focus,
+        #unique-contact-section textarea:focus {
+            border-color: rgb(17, 17, 58) !important;
+            background: #ffffff !important;
+            box-shadow: 0 0 0 2px rgba(17, 17, 58, 0.1) !important;
         }
-
-        /* Main Section Container */
-        .contact-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start; /* Top align taake form stretch na ho */
-            gap: 60px; /* Gap between left and right */
-            padding: 60px 20px; /* Side padding reduced for safety */
-            max-width: 1200px; /* Content ko center mein rakhne ke liye */
-            margin: 0 auto; /* Center align */
-            width: 100%;
+        
+        #unique-contact-section .checkbox-item:hover {
+            background-color: #eef2f6 !important;
         }
-
-        /* --- Left Side (Form) --- */
-        .contact-left {
-            flex: 1;
-            min-width: 300px;
-            max-width: 450px; /* Form ki width control ki hai (Chota kiya hai) */
-        }
-
-        .contact-left h1 {
-            font-size: 32px; /* Font size thoda adjust kiya */
-            margin-bottom: 10px;
-            color: rgb(17, 17, 58);
-            font-weight: 700;
-        }
-
-        .contact-left p {
-            font-size: 16px;
-            margin-bottom: 25px;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 25px; /* Inputs ke darmiyan gap */
-            background: #fff;
-            /* Padding hata di taake form clean aur minimal lage */
-        }
-
-        /* --- NEW INPUT STYLE (Bottom Line Only) --- */
-        .input-group {
-            position: relative;
-            width: 100%;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px 0; /* Sirf top-bottom padding, side 0 */
-            border: none;
-            border-bottom: 2px solid #ddd; /* Sirf neeche ki line */
-            background: transparent;
-            font-size: 16px;
-            outline: none;
-            transition: border-color 0.3s ease;
-            color: #333;
-            border-radius: 0; /* Rounded corners khatam */
-        }
-
-        /* Focus hone par color change */
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-bottom-color: rgb(17, 17, 58);
-        }
-
-        /* Button Style */
-        .contact-form button {
-            background: rgb(17, 17, 58);
-            color: #fff;
-            font-size: 15px;
-            font-weight: 600;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 4px; /* Thoda sharp edges */
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 10px;
-            align-self: flex-start; /* Button left align */
-        }
-
-        .contact-form button:hover {
-            background: rgb(30, 30, 90);
+        
+        #unique-contact-section button:hover {
+            background-color: rgb(30, 30, 90) !important;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(17, 17, 58, 0.2);
+            box-shadow: 0 5px 15px rgba(17, 17, 58, 0.2);
         }
 
-        /* Status Messages */
-        #status-message {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .success-msg { color: green; }
-        .error-msg { color: red; }
-
-        /* --- Right Side (Info) --- */
-        .contact-right {
-            flex: 1;
-            min-width: 300px;
-            max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-            padding-top: 10px; /* Thoda align karne ke liye */
+        #unique-contact-section a.learn-btn:hover {
+            gap: 12px !important;
         }
 
-        .info-block {
-            padding-left: 25px;
-            border-left: 4px solid rgb(17, 17, 58);
-        }
-
-        .info-block h2 {
-            font-size: 16px;
-            color: rgb(17, 17, 58);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: 0 0 5px 0;
-            font-weight: 600;
-        }
-
-        .info-block h3 {
-            font-size: 24px;
-            margin: 0 0 10px 0;
-            font-weight: 700;
-            color: #222;
-        }
-
-        .info-block p {
-            font-size: 15px;
-            margin-bottom: 15px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .learn-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            color: rgb(17, 17, 58);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            transition: gap 0.3s ease;
-        }
-
-        .learn-btn:hover {
-            gap: 10px; /* Arrow move effect */
-        }
-
-        /* --- MOBILE RESPONSIVENESS FIX --- */
-        @media (max-width: 850px) {
-            .contact-section {
-                flex-direction: column;
-                padding: 40px 20px;
-                gap: 50px;
-                align-items: center; /* Center content */
+        /* Mobile Responsive Helper */
+        @media (max-width: 900px) {
+            #unique-contact-section {
+                padding: 40px 20px !important;
             }
-
-            .contact-left, .contact-right {
-                min-width: 100%; /* Full width on mobile */
-                max-width: 100%;
-                padding: 0;
-            }
-            
-            .info-block {
-                border-left-width: 3px;
-                padding-left: 15px;
+            .contact-right-col {
+                position: static !important;
             }
         }
-
-        /* Extra Safe Mobile check */
-        @media (max-width: 400px) {
-            .contact-section {
-                padding: 30px 15px;
-            }
-            .contact-left h1 {
-                font-size: 28px;
-            }
-        }
-
 
 body {
   margin: 0;

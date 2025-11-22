@@ -73,32 +73,49 @@
   });
 
 
-  AOS.init({ duration: 1000 });
+  
+        AOS.init({ duration: 800, once: true });
 
+        (function() {
+            emailjs.init("xzBpQi5U68rp562Lu"); // Apni ID yahan check kar lena
+        })();
 
-(function() {
-emailjs.init("xzBpQi5U68rp562Lu");
-})();
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
 
+            // --- 1. Collect Selected Services ---
+            const checkedServices = document.querySelectorAll('.service-chk:checked');
+            let servicesArray = [];
+            checkedServices.forEach((checkbox) => {
+                servicesArray.push(checkbox.value);
+            });
+            // Hidden input mein value set kar rahe hain
+            document.getElementById('selected_services').value = servicesArray.join(", ");
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-e.preventDefault();
+            // --- 2. Sending Email ---
+            const statusMsg = document.getElementById("status-message");
+            const btn = document.getElementById("submitBtn");
+            const originalBtnText = btn.innerText;
 
+            btn.innerText = "Sending...";
+            btn.disabled = true;
+            statusMsg.innerText = "";
 
-const errorField = document.getElementById("error");
-const successField = document.getElementById("success");
-
-
-emailjs.sendForm("service_kkw0omk", "template_t4n5g19", this)
-.then(() => {
-successField.innerText = "✅ Email sent successfully!";
-errorField.innerText = "";
-this.reset();
-})
-.catch((err) => {
-errorField.innerText = "❌ Failed to send email. Please try again.";
-successField.innerText = "";
-console.error("Error:", err);
-});
-});
+            // 'selected_services' variable template mein hona chahiye
+            emailjs.sendForm("service_kkw0omk", "template_t4n5g19", this)
+                .then(() => {
+                    statusMsg.innerText = "✅ Inquiry Sent Successfully!";
+                    statusMsg.className = "success-msg";
+                    this.reset();
+                })
+                .catch((err) => {
+                    statusMsg.innerText = "❌ Failed to send. Check internet connection.";
+                    statusMsg.className = "error-msg";
+                    console.error("EmailJS Error:", err);
+                })
+                .finally(() => {
+                    btn.innerText = originalBtnText;
+                    btn.disabled = false;
+                });
+        });
  
