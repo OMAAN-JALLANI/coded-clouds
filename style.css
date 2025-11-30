@@ -426,150 +426,144 @@
   }
 }
     
-/* serviceee */
+/* serviceee *//* ========================
+   SERVICES SECTION (GRID FIX)
+   ======================== */
 .services-section {
-  background: #ffffff;
-  padding: 60px 20px;
-  color: #111;
-  text-align: center;
+    background: #ffffff;
+    padding: 80px 20px;
+    color: #111;
+    text-align: center;
 }
 
 .services-title {
-  background: none;
-  font-size: 2rem;
-  margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: var(--dark); /* Using theme color */
 }
- 
+
+/* --- GRID SYSTEM --- */
 .services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
- 
-.service-card {
-  position: relative;
-  width: 200px;
-  height: 300px;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  background: #ffffff;               
-}
- 
-.service-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-}
- 
-.card-1 .service-bg {
-  background-image: url("./images/web.webp");
-}
-
-.card-2 .service-bg {
-  background-image: url("./images/app.webp");
-}
-
-.card-3 .service-bg {
-  background-image: url("./images/PMS.webp");
-}
-
-.card-4 .service-bg {
-  background-image: url("./images/marketing.webp");
-}
-
-.card-5 .service-bg {
-  background-image: url("./images/crm.webp");
-}
-
-.card-6 .service-bg {
-  background-image: url("./images/6a327a49c84f482a9fd9ba0451a31765.webp");
-}
-
-.card-7 .service-bg {
-  background-image: url("./images/5c77ba78b22044d5ba75652b75559eec.webp");
-}
- 
-.service-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);    
-  z-index: 2;
-}
- 
-.service-name {
-  background: none;
-  position: relative;
-  top: 20px;
-  z-index: 3;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
- 
-.services-actions {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
- 
-@media (max-width: 992px) {
-  .services-section {
-    padding: 40px 16px;
-  }
-
-  .service-card {
-    width: 180px;
-    height: 260px;
-  }
-
-  .service-name {
-    font-size: 1rem;
-  }
-}
- 
-@media (max-width: 768px) {
-
-  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .service-card {
-    width: calc(50% - 20px);    
-    height: 240px;
-  }
-
-  .service-name {
-    font-size: 0.9rem;
-    top: 18px;
-  }
-}
- 
-@media (max-width: 480px) {
-
-  .services-section {
-    padding: 30px 12px;
-  }
-
-  .service-card {
-    width: calc(50% - 14px);    
-    height: 220px;
-  }
-
-  .service-name {
-    font-size: 0.8rem;
-    letter-spacing: 0.8px;
-  }
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* --- CARD STYLING --- */
+.service-card {
+    position: relative;
+    width: 260px;  /* Fixed Width for Desktop */
+    height: 350px; /* Fixed Height */
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: #000; /* Fallback */
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Background Images */
+.service-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+/* Image URLs (Apni images yahan lagana) */
+.card-1 .service-bg { background-image: url("./images/web.webp"); }
+.card-2 .service-bg { background-image: url("./images/app.webp"); }
+.card-3 .service-bg { background-image: url("./images/PMS.webp"); }
+.card-4 .service-bg { background-image: url("./images/marketing.webp"); }
+.card-5 .service-bg { background-image: url("./images/crm.webp"); }
+.card-6 .service-bg { background-image: url("./images/6a327a49c84f482a9fd9ba0451a31765.webp"); }
+.card-7 .service-bg { background-image: url("./images/5c77ba78b22044d5ba75652b75559eec.webp"); }
+
+.service-card:hover .service-bg {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+/* Overlay */
+.service-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+    z-index: 2;
+}
+
+/* Text */
+.service-name {
+    position: absolute;
+    bottom: 30px;
+    left: 0; 
+    right: 0;
+    z-index: 3;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Buttons Container */
+.services-actions {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#viewMoreBtn, #viewLessBtn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 991px) {
+    /* Tablet: 3 cards row */
+    .service-card {
+        width: 30%; 
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile: 2 Cards Side-by-Side (Important) */
+    .services-grid {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .service-card {
+        width: 47%; /* Almost half width minus gap */
+        height: 220px; /* Thora chota card */
+    }
+
+    .service-name {
+        font-size: 0.9rem;
+        bottom: 15px;
+    }
+    
+    .services-section {
+        padding: 50px 0;
+    }
+}
  
 .industries-section {
   padding: 70px 20px 90px;
@@ -852,80 +846,114 @@ width: 170px;
   .card h3 { font-size: 13px; }
 }
 
-  .achievements-section {
+/*achievement*/
+
+/* ========================
+   ACHIEVEMENTS SECTION
+   ======================== */
+.achievements-section {
   display: flex;
-  padding: 60px 50px;
+  align-items: center; /* Vertically center align */
+  justify-content: space-between;
+  padding: 80px 10%; /* Side padding percentage mein taake responsive ho */
   background-color: #ffffff;
   color: #333;
-  gap: 50px;
-  flex-wrap: wrap;
+  gap: 60px;
+  flex-wrap: wrap; /* Mobile par stack ho jaye */
 }
 
+/* --- LEFT SIDE (TEXT) --- */
 .achievements-left {
-    background: none;
   flex: 1;
-  min-width: 300px;
+  min-width: 300px; /* Taake text squish na ho */
 }
 
 .achievements-left h1 {
-    background: none;
   font-size: 36px;
+  font-weight: 700;
   margin-bottom: 10px;
+  color: #111;
 }
 
 .achievements-left h2 {
-    background: none;
-  font-size: 28px;
-  color: #555;
+  font-size: 24px;
+  color: var(--primary); /* Green Theme use karo agar hai, warna #0a870e */
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .achievements-left p {
-    background: none;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
   color: #666;
 }
 
+/* --- RIGHT SIDE (STATS GRID) --- */
 .achievements-right {
-    background: none;
   flex: 1;
   min-width: 300px;
+  
+  /* IMPORTANT: Flex ki jagah Grid use kiya hai perfect alignment k liye */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 Equal Columns */
+  gap: 40px; /* Beech ka fasla */
+}
+
+/* Individual Stat Box */
+.stat {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  align-items: flex-start; /* Left align */
   justify-content: center;
 }
 
-.stat-row {
-    background: none;
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.stat {
-    background: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .stat .number {
-    background: none;
-  font-size: 32px;
-  font-weight: bold;
-  color: rgb(17, 17, 58);  
+  font-size: 42px; /* Size thora bara kiya */
+  font-weight: 800;
+  color: rgb(17, 17, 58);
+  line-height: 1;
+  margin-bottom: 8px;
 }
 
 .stat .desc {
-    background: none;
-  font-size: 16px;
-  color: #333;
-  margin-top: 5px;
+  font-size: 15px;
+  color: #555;
+  font-weight: 500;
 }
 
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
+@media (max-width: 991px) {
+  .achievements-section {
+    flex-direction: column; /* Upar Neeche */
+    padding: 60px 20px;
+    gap: 40px;
+  }
 
+  .achievements-left {
+    width: 100%;
+    text-align: center; /* Mobile par text center acha lagta hai */
+  }
+  
+  .achievements-left h1 { font-size: 28px; }
+  .achievements-left h2 { font-size: 20px; }
+
+  /* Right Side Mobile */
+  .achievements-right {
+    width: 100%;
+    gap: 30px;
+    /* Mobile par bhi 2 columns rahenge jo neat lagenge */
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .stat {
+    align-items: center; /* Stats center align */
+    text-align: center;
+  }
+  
+  .stat .number { font-size: 32px; }
+}
 
 /**/
 .careers-section {
@@ -989,108 +1017,141 @@ width: 170px;
   transform: translateY(-3px);
 }
 /*CEOOOOOOOOOOOOOooo*/
-.ceo-section {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 60px 50px;
-gap: 40px;
+/* ========================
+   CEO MESSAGE SECTION (Fixed: White & Center)
+   ======================== */
+.ceo-message-section {
+    padding: 80px 20px;
+    background-color: #ffffff; /* Ab ye Pure White hai */
+    
+    /* Centering Logic */
+    display: flex;
+    justify-content: center; /* Horizontally Center */
+    align-items: center; /* Vertically Center */
+    text-align: center;
+    width: 100%;
 }
 
-
-.ceo-right {
-flex: 1;
-display: flex;
-flex-direction: column;
-align-items: flex-start;
+/* Content Wrapper */
+.ceo-content-wrapper {
+    max-width: 900px; /* Thora chora kiya taake congested na lage */
+    width: 100%;
+    margin: 0 auto; /* Ye ensure karega ke ye beech mein rahe */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Text aur elements ko center karta hai */
 }
 
-
-.ceo-pic {
-width: 260px;
-height: 320px;
-object-fit: cover;
-border-radius: 8px;
+/* Title Style */
+.section-heading {
+    font-size: 36px; /* Font thora bara kiya */
+    font-weight: 800;
+    color: #11113a;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
 }
 
+/* Title k neechay choti si line */
+.section-heading::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary, #0a870e); 
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Message/Quote Style */
+.quote-box {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 0 20px; /* Side se thora gap */
+}
+
+.ceo-statement {
+    font-size: 22px; /* Text thora bara kiya */
+    line-height: 1.6;
+    color: #333; /* Thora dark kiya taake white pe saaf dikhe */
+    font-weight: 500;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+/* Signature Block */
+.ceo-signature {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
 
 .ceo-name {
-font-size: 24px;
-font-weight: 700;
-margin-top: 12px;
-color: #11113a;
+    font-size: 26px;
+    font-weight: 800;
+    color: #11113a;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-
-.linkedin-icon {
-margin-top: 5px;
-width: 40px;
-height: 40px;
-transition: 0.3s ease;
+/* LinkedIn Button Style */
+.linkedin-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 1px solid #eee; /* Halka border */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
 }
 
-
-.linkedin-icon img {
-width: 100%;
-height: 100%;
+.linkedin-btn img {
+    width: 24px;
+    height: 24px;
 }
 
-
-.linkedin-icon:hover {
-transform: scale(1.15);
+.linkedin-btn span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0077b5; 
 }
 
-
-.ceo-left {
-flex: 1;
+.linkedin-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background-color: #f0f7ff; /* Hover pr halka blue tint */
 }
 
-
-.ceo-left h1 {
-font-size: 38px;
-font-weight: bold;
-color: #11113a;
-margin-bottom: 15px;
-}
-
-
-.ceo-left h4 {
-font-size: 18px;
-line-height: 1.6;
-color: #444;
-}
-
-
+/* ========================
+   MOBILE RESPONSIVE
+   ======================== */
 @media (max-width: 768px) {
-.ceo-section {
-flex-direction: column-reverse;
-text-align: left;
-padding: 40px 20px;
-}
+    .ceo-message-section {
+        padding: 60px 20px;
+    }
 
+    .section-heading {
+        font-size: 28px;
+    }
 
-.ceo-right,
-.ceo-left {
-width: 100%;
-}
+    .ceo-statement {
+        font-size: 18px;
+        line-height: 1.5;
+    }
 
-
-.ceo-pic {
-width: 180px;
-height: 240px;
-}
-
-
-.ceo-name {
-font-size: 20px;
-}
-
-
-.linkedin-icon {
-width: 30px;
-height: 30px;
-}
+    .ceo-name {
+        font-size: 22px;
+    }
 }
   /*ontactttttttttttttttt*/
 
@@ -1289,3 +1350,122 @@ body {
 
 
         
+
+        /*storyyyyyyyyyy*/
+
+        /* --- OFFCANVAS CONTAINER --- */
+.custom-offcanvas {
+    height: 90vh !important; /* Screen ka 90% cover karega */
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif; /* Clean Font */
+}
+
+.offcanvas-header {
+    padding: 20px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.offcanvas-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.offcanvas-body {
+    padding: 60px 40px;
+    overflow-y: auto;
+}
+
+/* --- TEXT STYLING --- */
+.main-heading {
+    font-size: 38px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.story-paragraphs p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify; /* Text neat lagega */
+}
+
+.story-paragraphs strong {
+    color: #201c4a;
+    font-weight: 700;
+}
+
+.highlight-text {
+    margin-top: 30px;
+    font-size: 18px !important;
+    font-weight: 600;
+    color: #335ea4 !important; /* Green Color for Final Line */
+    border-left: 4px solid #335ea4 ;
+    padding-left: 15px;
+}
+
+/* --- IMAGE GRID STYLING --- */
+.images-grid {
+    position: relative;
+    padding-left: 20px;
+}
+
+.img-box img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.img-box:hover img {
+    transform: scale(1.02); /* Thora zoom hover par */
+}
+
+/* Bari Image Size */
+.main-pic img {
+    height: 320px;
+    width: 100%;
+}
+
+/* Choti Images Size */
+.sub-pic {
+    flex: 1;
+}
+
+.sub-pic img {
+    height: 180px; /* Choti height */
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 991px) {
+    .custom-offcanvas {
+        height: 100vh !important;
+    }
+
+    .offcanvas-body {
+        padding: 30px 20px;
+    }
+
+    .main-heading {
+        font-size: 32px;
+    }
+
+    .images-grid {
+        padding-left: 0;
+        margin-top: 40px;
+    }
+    
+    .main-pic img {
+        height: 250px;
+    }
+    
+    .sub-pic img {
+        height: 140px;
+    }
+}
