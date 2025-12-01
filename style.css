@@ -773,7 +773,7 @@ width: 170px;
 .card:nth-child(3) { background-image: url('./images/network.webp'); }
 .card:nth-child(4) { background-image: url('./images/sat.webp'); }
 .card:nth-child(5) { background-image: url('./images/app.webp'); }
-.card:nth-child(6) { background-image: url('./images/app.webp'); }
+.card:nth-child(6) { background-image: url('./images/web.webp'); }
  
 .card::before {
   content: "";
