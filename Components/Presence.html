@@ -3,301 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - CodedClouds</title>
+    <title>Global Presence - CodedCloud</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
-
     <style>
-        /* --- PAGE SPECIFIC STYLES --- */
-        
-        /* 1. Header Section (Dark Tech Theme) */
-        .serv-header {
-            /* Dark Blue Overlay on Tech Image */
-            background: linear-gradient(to bottom, rgba(17, 17, 58, 0.85), rgba(17, 17, 58, 0.95)), 
-                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop');
+        /* --- VARIABLES & BASE STYLES --- */
+        :root {
+            --primary-blue: #0d1226; /* CodedCloud Navy */
+            --bg-white: #ffffff;
+            --text-dark: #1a1a1a;
+            --card-radius: 15px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- SECTION CONTAINER --- */
+        .presence-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* --- HEADINGS --- */
+        .section-tag {
+            color: #6c757d;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .main-heading {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .sub-text {
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            line-height: 1.6;
+        }
+
+        /* --- COUNTRY GRID SYSTEM --- */
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        /* Adjusting grid for 5 items to look good (Last row centered) */
+        @media (min-width: 1024px) {
+            .country-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            /* Making the last two items center aligned in a 3-col grid */
+            .country-card:nth-last-child(2) {
+                grid-column-start: 1; /* Custom placement if needed, or flex method below */
+            }
+        }
+
+        /* --- CARD DESIGN --- */
+        .country-card {
+            position: relative;
+            height: 350px;
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+            /* Animation for loading */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUpCard 0.8s ease forwards;
+        }
+
+        /* Animation Delays for Staggered Effect */
+        .country-card:nth-child(1) { animation-delay: 0.1s; }
+        .country-card:nth-child(2) { animation-delay: 0.2s; }
+        .country-card:nth-child(3) { animation-delay: 0.3s; }
+        .country-card:nth-child(4) { animation-delay: 0.4s; }
+        .country-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .country-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Background Image */
+        .card-bg {
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
-            height: 50vh;
-            min-height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            margin-bottom: 60px;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .serv-header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        .country-card:hover .card-bg {
+            transform: scale(1.1); /* Zoom effect */
         }
 
-        .serv-header p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* 2. Services Grid Section */
-        .services-page-section {
-            padding-bottom: 100px;
-            background-color: #fff;
-        }
-
-        /* --- CARD STYLING --- */
-        .service-box {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden; 
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-box:hover {
-            transform: translateY(-5px); 
-        }
-
-        /* Image Area */
-        .img-area {
-            height: 180px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .img-area img {
+        /* Gradient Overlay for Text Readability */
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: 0.5s ease;
-        }
-
-        .service-box:hover .img-area img {
-            transform: scale(1.1);
-        }
-
-        /* Content Area */
-        .content-area {
-            padding: 20px;
-            flex-grow: 1;
+            background: linear-gradient(to top, rgba(13, 18, 38, 0.9) 10%, rgba(13, 18, 38, 0) 60%);
             display: flex;
             flex-direction: column;
-            text-align: center;
+            justify-content: flex-end;
+            padding: 25px;
+            text-align: left;
         }
 
-        .content-area h3 {
-            font-size: 1.1rem;
+        /* Card Text */
+        .country-name {
+            color: #fff;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: rgb(17, 17, 58);
-            margin-bottom: 8px;
-            text-transform: uppercase;
+            margin-bottom: 5px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
         }
 
-        .content-area p {
-            color: #666;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            line-height: 1.5;
-            flex-grow: 1;
+        .region-tag {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.8;
         }
 
-        /* Button (Small & Navy Blue) */
-        .btn-get-service {
-            background: transparent;
-            color: rgb(17, 17, 58);
-            border: 1px solid rgb(17, 17, 58);
-            padding: 6px 0; /* Thora patla */
-            width: 100%;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 11px; /* Font chota */
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-get-service:hover {
-            background: rgb(17, 17, 58);
-            color: white;
-        }
-
-        /* --- RESPONSIVE LAYOUT --- */
-        
-        /* Laptop: 3 Cards Row */
-        @media (min-width: 992px) {
-            .row-cols-lg-3 > * {
-                flex: 0 0 auto;
-                width: 33.3333%;
+        /* --- ANIMATIONS --- */
+        @keyframes fadeUpCard {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* Mobile: 2 Cards Grid */
-        @media (max-width: 768px) {
-            .serv-header h1 { font-size: 2rem; }
-            .serv-header { height: 40vh; min-height: 300px; }
+        /* --- SPECIFIC COUNTRY IMAGES (Unsplash) --- */
+        /* UAE */
+        .bg-uae { background-image: url('../images/presence/UAEe.png'); }
+        /* Oman */
+        .bg-oman { background-image: url('../images/presence/oman.png'); }
+        /* KSA */
+        .bg-ksa { background-image: url('../images/presence/saudia.png'); }
+        /* Pakistan */
+        .bg-pak { background-image: url('../images/presence/pakistan.png'); } /* Badshahi Mosque Style */
+        /* UK */
+        .bg-uk { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1000&auto=format&fit=crop'); }
 
-            /* Grid Adjustment for Mobile */
-            .row.g-4 {
-                --bs-gutter-x: 10px; /* Gap kam */
-                --bs-gutter-y: 15px;
+        /* --- FLEX TRICK FOR 5 ITEMS (Center last row) --- */
+        /* If screen is big, we use flex to center the last 2 items if grid leaves gaps */
+        @media (min-width: 1024px) {
+            .country-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
-            
-            .service-box {
-                border-radius: 10px;
+            .country-card {
+                flex: 0 0 31%; /* Approx 1/3 width minus gap */
+                margin-bottom: 20px;
             }
-
-            .img-area { height: 120px; } /* Choti image mobile pe */
-            
-            .content-area { padding: 15px 10px; }
-            
-            .content-area h3 { font-size: 0.9rem; }
-            
-            .content-area p { font-size: 0.75rem; margin-bottom: 10px; }
-            
-            .btn-get-service { font-size: 10px; padding: 5px 0; }
         }
+        @media (max-width: 1023px) {
+            .country-grid {
+                display: grid; /* Back to grid for tablets/mobiles */
+            }
+        }
+
     </style>
 </head>
 <body>
 
-    <!-- HEADER / COVER SECTION -->
-    <header class="serv-header">
-        <div class="container" data-aos="fade-up">
-            <span class="badge bg-light text-dark px-3 py-2 mb-3 rounded-pill fw-bold shadow-sm">OUR EXPERTISE</span>
-            <h1 class="display-4 fw-bold">Premium Digital Solutions</h1>
-            <p class="lead mt-3 text-light opacity-75">Tailored services to scale your business.</p>
-        </div>
-    </header>
+    <section class="presence-section">
+        <!-- Header -->
+        <span class="section-tag">Global Presence</span>
+        <h2 class="main-heading">Serving Across Borders</h2>
+        <p class="sub-text">
+            CodedClouds delivers innovative digital solutions worldwide. We are proud to have established a strong footprint in these key regions.
+        </p>
 
-    <!-- SERVICES GRID -->
-    <section class="services-page-section">
-        <div class="container">
+        <!-- Countries Grid -->
+        <div class="country-grid">
             
-            <!-- Using Bootstrap Grid Classes for Perfect Alignment -->
-            <div class="row g-4 row-cols-2 row-cols-md-2 row-cols-lg-3 justify-content-center">
-                
-                <!-- 1. WEB DEVELOPMENT -->
-                <div class="col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-box">
-                        <div class="img-area">
-                            <img src="../images/web.webp" alt="Web Development">
-                        </div>
-                        <div class="content-area">
-                            <h3>Web Development</h3>
-                            <p>Custom websites & complex web apps built for performance.</p>
-                            <a href="contact.html" class="btn-get-service">Get Service</a>
-                        </div>
-                    </div>
+            <!-- 1. UAE -->
+            <div class="country-card">
+                <div class="card-bg bg-uae"></div>
+                <div class="card-overlay">
+                    <h3 class="country-name">U.A.E</h3>
+                    <span class="region-tag">Middle East</span>
                 </div>
-
-                <!-- 2. APP DEVELOPMENT -->
-                <div class="col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-box">
-                        <div class="img-area">
-                            <img src="../images/app.webp" alt="App Development">
-                        </div>
-                        <div class="content-area">
-                            <h3>App Development</h3>
-                            <p>Native mobile apps for iOS and Android with seamless UI/UX.</p>
-                            <a href="contact.html" class="btn-get-service">Get Service</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. PMS DEVELOPMENT -->
-                <div class="col" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-box">
-                        <div class="img-area">
-                            <img src="../images/PMS.webp" alt="PMS">
-                        </div>
-                        <div class="content-area">
-                            <h3>PMS Development</h3>
-                            <p>Property Management Systems to streamline operations.</p>
-                            <a href="contact.html" class="btn-get-service">Get Service</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. DIGITAL MARKETING -->
-                <div class="col" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-box">
-                        <div class="img-area">
-                            <img src="../images/marketing.webp" alt="Marketing">
-                        </div>
-                        <div class="content-area">
-                            <h3>Digital Marketing</h3>
-                            <p>SEO, Social Media, and PPC campaigns to boost brand visibility.</p>
-                            <a href="contact.html" class="btn-get-service">Get Service</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. FULL CRM -->
-                <div class="col" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-box">
-                        <div class="img-area">
-                            <img src="../images/crm.webp" alt="CRM">
-                        </div>
-                        <div class="content-area">
-                            <h3>Full CRM</h3>
-                            <p>Customer Relationship Management systems to track leads.</p>
-                            <a href="contact.html" class="btn-get-service">Get Service</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. POS SOFTWARE -->
-                <div class="col" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-box">
-                        <div class="img-area">
-                            <img src="../images/6a327a49c84f482a9fd9ba0451a31765.webp" alt="POS">
-                        </div>
-                        <div class="content-area">
-                            <h3>POS Software</h3>
-                            <p>Point of Sale solutions for retail shops and restaurants.</p>
-                            <a href="contact.html" class="btn-get-service">Get Service</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. ECOMMERCE SERVICES -->
-                <div class="col" data-aos="fade-up" data-aos-delay="700">
-                    <div class="service-box">
-                        <div class="img-area">
-                            <img src="../images/5c77ba78b22044d5ba75652b75559eec.webp" alt="Ecommerce">
-                        </div>
-                        <div class="content-area">
-                            <h3>Ecommerce Services</h3>
-                            <p>Shopify, WooCommerce, and custom online stores.</p>
-                            <a href="contact.html" class="btn-get-service">Get Service</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- 2. Oman -->
+            <div class="country-card">
+                <div class="card-bg bg-oman"></div>
+                <div class="card-overlay">
+                    <h3 class="country-name">Oman</h3>
+                    <span class="region-tag">Middle East</span>
+                </div>
+            </div>
+
+            <!-- 3. KSA -->
+            <div class="country-card">
+                <div class="card-bg bg-ksa"></div>
+                <div class="card-overlay">
+                    <h3 class="country-name">Saudi Arabia (KSA)</h3>
+                    <span class="region-tag">Middle East</span>
+                </div>
+            </div>
+
+            <!-- 4. Pakistan -->
+            <div class="country-card">
+                <div class="card-bg bg-pak"></div>
+                <div class="card-overlay">
+                    <h3 class="country-name">Pakistan</h3>
+                    <span class="region-tag">Asia</span>
+                </div>
+            </div>
+
+            <!-- 5. UK -->
+            <div class="country-card">
+                <div class="card-bg bg-uk"></div>
+                <div class="card-overlay">
+                    <h3 class="country-name">United Kingdom</h3>
+                    <span class="region-tag">Europe</span>
+                </div>
+            </div>
+
         </div>
     </section>
-<div id="unique-contact-section" style="font-family: 'Montserrat', sans-serif; background-color: #fff; overflow-x: hidden; width: 100%; box-sizing: border-box;">
+ <div id="unique-contact-section" style="font-family: 'Montserrat', sans-serif; background-color: #fff; overflow-x: hidden; width: 100%; box-sizing: border-box;">
         
         <section style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 60px; padding: 80px 5%; max-width: 1400px; margin: 0 auto; width: 100%; box-sizing: border-box;">
             
@@ -425,12 +384,7 @@
              
             <div class="contact-right-col" data-aos="fade-left" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 40px; padding-top: 20px; position: sticky; top: 20px; box-sizing: border-box;">
                 
-                <div style="padding-left: 25px; border-left: 5px solid rgb(17, 17, 58); box-sizing: border-box;">
-                    <h2 style="font-size: 14px; color: rgb(17, 17, 58); text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0; font-weight: 700;">Earth</h2>
-                    <h3 style="font-size: 26px; margin: 0 0 15px 0; font-weight: 800; color: #222;">Global Presence</h3>
-                    <p style="font-size: 15px; margin-bottom: 15px; color: #555; line-height: 1.6; font-weight: 500;">We're across 5 continents, providing services to you.</p>
-                    <a href="./Presence.html" class="learn-btn" style="display: inline-flex; align-items: center; gap: 8px; color: rgb(17, 17, 58); text-decoration: none; font-weight: 700; font-size: 14px; transition: gap 0.3s ease; text-transform: uppercase;">Learn more <span>&rarr;</span></a>
-                </div>
+                
 
                 <div style="padding-left: 25px; border-left: 5px solid rgb(17, 17, 58); box-sizing: border-box;">
                     <h2 style="font-size: 14px; color: rgb(17, 17, 58); text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0; font-weight: 700;">People</h2>
@@ -442,11 +396,5 @@
             </div>
         </section>
     </div>
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, offset: 50 });
-    </script>
 </body>
 </html>
