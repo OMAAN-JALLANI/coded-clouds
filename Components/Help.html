@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-navy: #050a18;
+            --accent-blue: #00d4ff;
+            --bg-white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-white);
+            color: #333;
+        }
+
+        /* --- Hero Section with Video --- */
+        .hero-video-section {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-color: var(--bg-white);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Video ke upar text dikhne ke liye light overlay */
+            border-radius: 10px;
+        }
+
+        .hero-overlay h1 { color: var(--primary-navy); font-size: 2.5rem; margin: 0; }
+
+        /* --- Links Grid --- */
+        .container { max-width: 1000px; margin: -50px auto 50px; position: relative; z-index: 3; padding: 0 20px; }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--primary-navy);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--accent-blue); }
+        .card i { font-size: 40px; color: var(--accent-blue); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; }
+
+        /* --- FAQ Section --- */
+        .faq-wrap { padding: 50px 20px; background: var(--light-gray); }
+        .faq-content { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: white; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; }
+        .faq-btn { width: 100%; padding: 20px; text-align: left; background: none; border: none; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-ans { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s; color: #666; }
+        .faq-item.active .faq-ans { padding-bottom: 20px; max-height: 200px; }
+
+        @media (max-width: 768px) {
+            .hero-video-section { height: 300px; }
+            .hero-overlay h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-video-section">
+        <video autoplay muted loop playsinline>
+            <source src="../images/hero.webm" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <h1>Support Center</h1>
+            <p>We are here to help you scale</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="links-grid">
+            <a href="index.html#services" class="card">
+                <i class="fas fa-layer-group"></i>
+                <h3>Services</h3>
+                <p>Explore what we build</p>
+            </a>
+            <a href="https://wa.me/your-number" class="card">
+                <i class="fab fa-whatsapp"></i>
+                <h3>Live Chat</h3>
+                <p>Instant support on WhatsApp</p>
+            </a>
+            <a href="index.html#contact" class="card">
+                <i class="fas fa-envelope"></i>
+                <h3>Inquiry</h3>
+                <p>Send us a project brief</p>
+            </a>
+        </div>
+    </div>
+
+    <section class="faq-wrap">
+        <div class="faq-content">
+            <h2 style="text-align:center; margin-bottom:30px;">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-btn">How to start a project? <i class="fas fa-plus"></i></button>
+                <div class="faq-ans">You can click on 'Book Meeting' or contact us via WhatsApp to share your requirements.</div>
+            </div>
+            </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -23,13 +23,7 @@
    INDUSTRIES HEADER (With Filter)
    ======================== */
 .ind-header {
-    /* Image + Dark Navy Blue Filter Overlay */
-    background: linear-gradient(to bottom, rgba(17, 17, 58, 0.85), rgba(0, 0, 0, 0.7)), 
-                url('../images/indus/indus.png'); /* Apni image ka path yahan lagana */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
+   
     height: 60vh; /* Screen ka 60% hissa */
     min-height: 500px;
     
@@ -41,7 +35,37 @@
     position: relative;  
     border-radius: 3px;
 }
+/* --- Background Video --- */
+.back-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Yeh video ko full screen adjust krega */
+    z-index: -2;        /* Sab se peeche */
+}
 
+/* --- Blue Overlay (Wohi purana gradient) --- */
+.ind-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Tumhara purana gradient yahan copy kia hai */
+    background: linear-gradient(to bottom, rgba(17, 17, 58, 0.85), rgba(0, 0, 0, 0.7));
+    z-index: -1;        /* Video k ooper, lekin Text k neechay */
+}
+
+/* --- Content (Text) --- */
+.ind-header .container {
+    position: relative;
+    z-index: 1;         /* Text sab se ooper rahay ga */
+}
 /* Badge Style (Green Tag) */
 .badge-custom {
     background-color: #1a2047; /* Green Theme */
@@ -220,10 +244,17 @@
     </div>
 
   <header class="ind-header">
+    
+    <video autoplay muted loop playsinline class="back-video">
+        <source src="../images/shakehand.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="container" data-aos="fade-up">  
         <h1 class="display-4 fw-bold">Driving Innovation Across<br>Major Industries</h1>
         <p class="lead mt-3 text-light opacity-75">We deliver tailored technology solutions that solve real-world problems.</p>
     </div>
+
 </header>
 
     <section class="industries-section">

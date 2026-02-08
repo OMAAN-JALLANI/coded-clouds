@@ -22,22 +22,49 @@
         /* --- PAGE SPECIFIC STYLES --- */
         
         /* 1. Header Section (Dark Tech Theme) */
-        .serv-header {
-            /* Dark Blue Overlay on Tech Image */
-            background: linear-gradient(to bottom, rgba(17, 17, 58, 0.85), rgba(17, 17, 58, 0.95)), 
-                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            min-height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            margin-bottom: 60px;
-        }
+       /* --- Header Container --- */
+.serv-header {
+    position: relative;
+    height: 50vh;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 60px;
+    overflow: hidden; /* Video ko bahar nikalne se rokta hai */
+}
+
+/* --- Video Styling --- */
+.serv-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video ko poora screen fit karega */
+    z-index: -2;       /* Sab se peeche */
+}
+
+/* --- Dark Blue Overlay (Gradient) --- */
+.serv-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Tumhara purana gradient */
+    background: linear-gradient(to bottom, rgba(78, 78, 181, 0.115), rgba(17, 17, 58, 0.95));
+    z-index: -1;       /* Video k ooper, Content k neechay */
+}
+
+/* --- Content Styling --- */
+.serv-header .container {
+    position: relative;
+    z-index: 1;        /* Text sab se ooper */
+}
 
         .serv-header h1 {
             font-size: 3.5rem;
@@ -182,14 +209,18 @@
 <body>
 
     <!-- HEADER / COVER SECTION -->
-    <header class="serv-header">
-        <div class="container" data-aos="fade-up">
-            <span class="badge bg-light text-dark px-3 py-2 mb-3 rounded-pill fw-bold shadow-sm">OUR EXPERTISE</span>
-            <h1 class="display-4 fw-bold">Premium Digital Solutions</h1>
-            <p class="lead mt-3 text-light opacity-75">Tailored services to scale your business.</p>
-        </div>
-    </header>
-
+ <header class="serv-header">
+    
+    <video autoplay muted loop playsinline class="serv-video-bg">
+        <source src="../images/hero.webm" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container" data-aos="fade-up">
+        <span class="badge bg-light text-dark px-3 py-2 mb-3 rounded-pill fw-bold shadow-sm">OUR EXPERTISE</span>
+        <h1 class="display-4 fw-bold">Premium Digital Solutions</h1>
+        <p class="lead mt-3 text-light opacity-75">Tailored services to scale your business.</p>
+    </div>
+</header>
     <!-- SERVICES GRID -->
     <section class="services-page-section">
         <div class="container">
