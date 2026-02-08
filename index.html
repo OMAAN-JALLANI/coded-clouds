@@ -83,7 +83,7 @@
   </div>
 </section>
 
-<!--moving logos-->
+<!--moving logos
  
 <section class="logo-strip" data-aos="fade-up">
    
@@ -134,13 +134,182 @@
     </div>
     </div>
   </div>
+</section>-->
+
+<section class="client-section" style="margin-top: 100px;">
+    <div class="client-container">
+        <h2>Meet Our Clients</h2>
+        <div class="divider"></div>
+        <p class="sub-text">We have collaborated with brands across <strong style="color: #11113a;"> 6 </strong> countries to deliver excellence.</p>
+
+        <div class="slider-wrapper">
+            <button class="nav-btn prev" onclick="moveSlide(-1)">❮</button>
+            
+            <div class="slider-box">
+                <div class="logo-track" id="logoTrack">
+                    <div class="logo-item"><img src="./images/PRO.webp" alt="Client 1"></div>
+                    <div class="logo-item"><img src="./images/madni.png" alt="Client 2"></div>
+                    <div class="logo-item"><img src="./images/TCS.webp" alt="Client 3"></div>
+                    <div class="logo-item"><img src="./images/kids.png" alt="Client 4"></div>
+                    <div class="logo-item"><img src="./images/sakoon.png" alt="Client 5"></div>
+                    <div class="logo-item"><img src="./images/Hareesa.png" alt="Client 6"></div>
+                    <div class="logo-item"><img src="./images/rooh.png" alt="Client 7"></div>
+                    <div class="logo-item"><img src="./images/misbar.webp" alt="Client 8"></div>
+                    <!--again-->
+                     <div class="logo-item"><img src="./images/PRO.webp" alt="Client 1"></div>
+                    <div class="logo-item"><img src="./images/madni.png" alt="Client 2"></div>
+                    <div class="logo-item"><img src="./images/TCS.webp" alt="Client 3"></div>
+                    <div class="logo-item"><img src="./images/kids.png" alt="Client 4"></div>
+                    <div class="logo-item"><img src="./images/sakoon.png" alt="Client 5"></div>
+                    <div class="logo-item"><img src="./images/Hareesa.png" alt="Client 6"></div>
+                    <div class="logo-item"><img src="./images/rooh.png" alt="Client 7"></div>
+                    <div class="logo-item"><img src="./images/misbar.webp" alt="Client 8"></div>
+                </div>
+            </div>
+
+            <button class="nav-btn next" onclick="moveSlide(1)">❯</button>
+        </div>
+    </div>
 </section>
+
+<style>
+    /* CSS Styling */
+    .client-section {
+        background-color: #ffffff;
+        padding: 60px 20px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .client-container h2 {
+        font-size: 2.2rem;
+        color: #050a18;
+        margin-bottom: 10px;
+        font-family: sans-serif;
+    }
+
+    .divider {
+        width: 50px;
+        height: 3px;
+        background: #11113a; /* Red line like your screenshot */
+        margin: 0 auto 20px;
+    }
+
+    .sub-text {
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 40px;
+    }
+
+    /* Slider Core */
+    .slider-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .slider-box {
+        width: 80%;
+        overflow: hidden;
+    }
+
+    .logo-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 20px; /* Logos ke darmiyan space */
+    }
+
+    .logo-item {
+        min-width: calc(20% - 20px); /* Desktop par 5 logos dikhenge */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .logo-item img {
+        max-width: 150px;
+        height: auto;
+        filter: none !important; /* No filters as requested */
+    }
+
+    /* Navigation Buttons */
+    .nav-btn {
+        background:rgb(17, 17, 58);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        z-index: 10;
+    }
+
+    .nav-btn:hover { background: #333; }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .logo-item { min-width: calc(33.33% - 20px); } /* Tablets: 3 logos */
+    }
+
+    @media (max-width: 600px) {
+        .logo-item { min-width: calc(100% - 20px); } /* Mobile: 1 logo */
+        .slider-box { width: 70%; }
+    }
+</style>
+
+<script>
+    // Slider JavaScript
+    const track = document.getElementById('logoTrack');
+    let index = 0;
+    const totalLogos = 16;
+    
+    function getVisibleLogos() {
+        if (window.innerWidth <= 600) return 1;
+        if (window.innerWidth <= 1024) return 3;
+        return 5;
+    }
+
+    function moveSlide(direction) {
+        const visibleLogos = getVisibleLogos();
+        const maxIndex = totalLogos - visibleLogos;
+        
+        index += direction;
+
+        if (index > maxIndex) {
+            index = 0; // Loop back to start
+        } else if (index < 0) {
+            index = maxIndex; // Go to end
+        }
+
+        const slideWidth = track.querySelector('.logo-item').offsetWidth + 20;
+        track.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    // Auto Slide every 3 seconds
+    let autoSlide = setInterval(() => moveSlide(1), 3000);
+
+    // Stop auto-slide when user interacts
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(() => moveSlide(1), 3000);
+        });
+    });
+</script>
 <!--serviceee-->
 
 <!-- =========================
      8. SERVICES SECTION (View More Logic)
      ========================= -->
-<section class="services-section" id="service" data-aos="fade-up">
+<section class="services-section" id="service" data-aos="fade-up" style="margin-top: 50px;">
     
     <div class="container text-center mb-5">
         <h2 class="services-title">Transform Your Business</h2>
