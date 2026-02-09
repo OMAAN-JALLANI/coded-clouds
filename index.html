@@ -115,6 +115,7 @@
       <button class="btn" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasHelp" aria-controls="offcanvasHelp">
         WHO WE HELP
       </button>
+      
        <button class="btn" id="nav-btns" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWho" aria-controls="offcanvasWho">
         WHO WE ARE
       </button>
@@ -635,6 +636,9 @@
         }
     });
 </script>
+<!--our teammmmmm-->
+
+ 
   <!--CEO-->
   <section class="ceo-message-section" id="ceo-section">
     <div class="container">
@@ -1117,6 +1121,7 @@
   </div>
 </div>
 
+
 <!--stoeyyyyyyyyyyyy-->
 <div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvasstory" aria-labelledby="offcanvasstoryLabel">
   
@@ -1182,9 +1187,80 @@
             <p>Are you passionate about technology? Do you want to work on challenging projects with a global team?</p>
             <p>We are always looking for talented:</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
-                <span class="badge bg-primary p-2">Full Stack Developers</span>
-                <span class="badge bg-primary p-2">UI/UX Designers</span>
-                <span class="badge bg-primary p-2">Marketing Gurus</span>
+                <style>
+                    .cta-join-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 18px 35px;
+    background: rgb(17, 17, 58);
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(17, 17, 58, 0.2);
+}
+
+/* Arrow styling */
+.cta-join-btn svg {
+    margin-left: 15px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+.cta-join-btn:hover {
+    background: #ffffff; /* Glow color on hover */
+    color: rgb(17, 17, 58);
+    box-shadow: 0 15px 30px rgb(17, 17, 58);
+    transform: translateY(-3px);
+}
+
+.cta-join-btn:hover svg {
+    transform: translateX(5px);
+    stroke: rgb(17, 17, 58);
+}
+
+/* Background Shine Animation */
+.cta-join-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-join-btn:hover::after {
+    left: 100%;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .cta-join-btn {
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+}
+                </style> 
+               <a href="./Components/join us.html" class="cta-join-btn">
+    <span>See how to join Coded Clouds</span>
+    <svg width="13px" height="10px" viewBox="0 0 13 10">
+        <path d="M1,5 L11,5"></path>
+        <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+</a>
             </div> 
             <p class="mt-3 text-muted small">Send your CV to: hashim@codedclouds.org </p>
         </div>
