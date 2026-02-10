@@ -94,6 +94,87 @@
         }
     </style>
 </head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<div id="elastic-cursor"></div>
+
+<style>
+    #elastic-cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background-color: rgb(17, 17, 58); /* Aapka Navy Blue Color */
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        /* Glow effect taake dark bg par nazar aaye */
+        box-shadow: 0 0 10px rgba(17, 17, 58, 0.4);
+        transform-origin: center center;
+    }
+
+    /* Jab link par jaye to cursor white ho jaye ya invert ho */
+    .cursor-active {
+        mix-blend-mode: difference;
+        background-color: white !important;
+    }
+</style>
+
+<script>
+    const cursor = document.querySelector("#elastic-cursor");
+
+    // Cursor position and scale settings
+    let pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    let mouse = { x: pos.x, y: pos.y };
+    let speed = 0.15; // Smoothness factor
+
+    // Speed/Stretch Calculation
+    let fpms = 60 / 1000;
+    
+    window.addEventListener("mousemove", e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    const xSet = gsap.quickSetter(cursor, "x", "px");
+    const ySet = gsap.quickSetter(cursor, "y", "px");
+
+    gsap.ticker.add((time, deltaTime) => {
+        let delta = deltaTime * fpms;
+        let dt = 1.0 - Math.pow(1.0 - speed, delta);
+        
+        // Calculate distance moved
+        let dx = mouse.x - pos.x;
+        let dy = mouse.y - pos.y;
+        
+        pos.x += dx * dt;
+        pos.y += dy * dt;
+        
+        // Calculate velocity for stretching
+        let velocity = Math.sqrt(dx * dx + dy * dy);
+        let setRotation = Math.atan2(dy, dx) * (180 / Math.PI);
+        
+        // Velocity ke hisab se stretch (Max stretch limit 2.5 rakhi hai)
+        let setScale = Math.min(velocity * 0.015 + 1, 2.5);
+        let setScaleY = Math.max(1 - velocity * 0.008, 0.5);
+
+        xSet(pos.x - 10); // 10 is half of width
+        ySet(pos.y - 10);
+        
+        // Apply rotation and stretching
+        gsap.set(cursor, {
+            rotation: setRotation,
+            scaleX: setScale,
+            scaleY: setScaleY
+        });
+    });
+
+    // Hover effect on links
+    document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-active'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-active'));
+    });
+</script>
 <body>
 <nav class="main-nav">
     <div class="nav-container">
