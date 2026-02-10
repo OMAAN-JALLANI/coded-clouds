@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: rgb(17, 17, 58);
+            --cyan: #00d4ff;
+            --white: #ffffff;
+            --gray: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--white); color: #333; overflow-x: hidden; }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: var(--white);
+            animation: fadeIn 1s ease-in;
+        }
+        .hero-section h1 { color: var(--navy); font-size: 3.5rem; font-weight: 800; }
+        .hero-underline { width: 80px; height: 5px; background: var(--cyan); margin: 20px auto; border-radius: 10px; }
+        .hero-section p { color: #666; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* --- Marketing Features (How We Work) --- */
+        .features-section { padding: 80px 20px; background: var(--gray); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .section-heading { text-align: center; color: var(--navy); margin-bottom: 50px; font-size: 2.2rem; }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(17, 17, 58, 0.1);
+        }
+
+        .feature-card i { font-size: 2.5rem; color: var(--cyan); margin-bottom: 20px; }
+        .feature-card h3 { color: var(--navy); margin-bottom: 15px; }
+        .feature-card p { color: #777; font-size: 0.9rem; line-height: 1.6; }
+
+        /* --- Brand Showcase --- */
+        .brand-section { padding: 80px 20px; text-align: center; }
+        
+        .brand-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .brand-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            width: 200px;
+            transition: 0.3s;
+        }
+
+        .brand-box:hover { transform: scale(1.1); }
+
+        .brand-logo {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .brand-box h4 { color: var(--navy); font-weight: 700; }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: var(--navy);
+            color: white;
+            margin-top: 50px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 50px;
+            background: var(--cyan);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover { background: white; transform: scale(1.1); }
+
+        /* --- Mobile --- */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .section-heading { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="../images/logo.webp" alt="Coded Clouds Logo"> 
+            </a>
+
+        <div class="nav-actions">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navigation Styling */
+    .main-nav {
+        background-color: #ffffff; /* White Background */
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+        height: 50px; /* Adjust height according to your logo */
+        display: block;
+    }
+
+    .logo span {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-weight: 800;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        background-color: rgb(17, 17, 58); /* Navy Blue */
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: 2px solid rgb(17, 17, 58);
+    }
+
+    .back-btn:hover {
+        background-color: transparent;
+        color: rgb(17, 17, 58);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .main-nav {
+            height: 70px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+
+        .back-btn span {
+            display: none; /* Mobile par sirf arrow dikhega ya text chota ho jayega */
+        }
+        
+        .back-btn {
+            padding: 10px 15px;
+        }
+
+        .back-btn::after {
+            content: 'Back'; /* Mobile par chota text */
+            display: inline-block;
+        }
+    }
+</style>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Digital Marketing</h1>
+            <div class="hero-underline"></div>
+            <p>We don't just run ads; we build brands. Our data-driven marketing strategies ensure your business reaches the right audience at the right time.</p>
+        </div>
+    </header>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-heading">Our Marketing Approach</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-search-dollar"></i>
+                    <h3>Market Research</h3>
+                    <p>Understanding your competitors and target audience before spending a single penny.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-ad"></i>
+                    <h3>Targeted Ads</h3>
+                    <p>Meta, Google, and TikTok ads designed for high conversion and low cost per lead.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Social Media</h3>
+                    <p>Maintaining a strong brand presence across all social platforms with engaging content.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>ROI Focused</h3>
+                    <p>We focus on sales and leads, not just likes and comments. Your profit is our priority.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brand-section">
+        <div class="container">
+            <h2 class="section-heading">Brands We've Empowered</h2>
+            <div class="brand-container">
+                <div class="brand-box">
+                    <img src="../images/Hareesa.png" alt="Hareesa Brand" class="brand-logo">
+                    <h4>HAREESA</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Social Media & Growth</p>
+                </div>
+
+                <div class="brand-box">
+                    <img src="./images/logos/brand2.png" alt="Client Logo" class="brand-logo">
+                    <h4>HAM SB KA ATTA</h4>
+                    <p style="font-size: 0.8rem; color: #666;">Full Stack Marketing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Scale Your Brand?</h2>
+            <p>Join the successful brands that grow with Coded Clouds.</p>
+            <a href="./contact.html" class="cta-btn">Start My Campaign</a>
+        </div>
+    </section>
+
+</body>
+</html>

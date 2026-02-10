@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Development - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: rgb(17, 17, 58);
+            --cyan: #00d4ff;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: var(--white);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .hero-section h1 {
+            color: var(--navy);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .hero-underline {
+            width: 80px;
+            height: 5px;
+            background: var(--cyan);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        .hero-section p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* --- App Features Section --- */
+        .features-section {
+            padding: 80px 20px;
+            background: var(--gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--cyan);
+            box-shadow: 0 15px 40px rgba(17, 17, 58, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #777;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: var(--navy);
+            color: white;
+            margin-top: 50px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .cta-section p {
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--cyan);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .cta-btn:hover {
+            background: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* --- Animation --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .cta-section h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="../images/logo.webp" alt="Coded Clouds Logo"> 
+            </a>
+
+        <div class="nav-actions">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navigation Styling */
+    .main-nav {
+        background-color: #ffffff; /* White Background */
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+        height: 50px; /* Adjust height according to your logo */
+        display: block;
+    }
+
+    .logo span {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-weight: 800;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        background-color: rgb(17, 17, 58); /* Navy Blue */
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: 2px solid rgb(17, 17, 58);
+    }
+
+    .back-btn:hover {
+        background-color: transparent;
+        color: rgb(17, 17, 58);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .main-nav {
+            height: 70px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+
+        .back-btn span {
+            display: none; /* Mobile par sirf arrow dikhega ya text chota ho jayega */
+        }
+        
+        .back-btn {
+            padding: 10px 15px;
+        }
+
+        .back-btn::after {
+            content: 'Back'; /* Mobile par chota text */
+            display: inline-block;
+        }
+    }
+</style>
+    <header class="hero-section">
+        <div class="container">
+            <h1>App Development</h1>
+            <div class="hero-underline"></div>
+            <p>We build powerful, user-centric mobile applications for Android and iOS. From concept to deployment, our team ensures your app stands out in the digital marketplace with seamless performance and cutting-edge design.</p>
+        </div>
+    </header>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="feature-grid">
+                
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>iOS & Android</h3>
+                    <p>Native and Cross-platform development using Flutter and React Native for a smooth experience on all devices.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Custom UI/UX</h3>
+                    <p>Modern, intuitive designs focused on user engagement and ease of navigation to keep your users coming back.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast & Secure</h3>
+                    <p>Optimized code for high-speed performance and high-level security protocols to protect user data.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-sync"></i>
+                    <h3>Real-time Updates</h3>
+                    <p>Integration with real-time databases and cloud services for instant data synchronization and push notifications.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Powerful Backend</h3>
+                    <p>Scalable server-side solutions that grow with your user base, ensuring zero downtime.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>App Analytics</h3>
+                    <p>Built-in tracking to monitor user behavior and app performance, helping you make data-driven decisions.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to launch your own App?</h2>
+            <p>Get a free consultation today and let's discuss how we can bring your idea to life.</p>
+            <a href="./contact.html" class="cta-btn">Contact Us Now</a>
+        </div>
+    </section>
+
+</body>
+</html>

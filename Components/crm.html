@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom CRM Solutions - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: rgb(17, 17, 58);
+            --cyan: #00d4ff;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--white); color: #333; overflow-x: hidden; }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: var(--white);
+        }
+        .hero-section h1 { color: var(--navy); font-size: 3.5rem; font-weight: 800; }
+        .hero-underline { width: 80px; height: 5px; background: var(--cyan); margin: 20px auto; border-radius: 10px; }
+        .hero-section p { color: #666; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* --- CRM Concept Section --- */
+        .crm-features { padding: 80px 20px; background: var(--gray); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .section-heading { text-align: center; color: var(--navy); margin-bottom: 50px; font-size: 2.2rem; }
+
+        .crm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .crm-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid var(--navy);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .crm-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(17,17,58,0.1); }
+        .crm-card i { font-size: 2.5rem; color: var(--cyan); margin-bottom: 20px; display: block; }
+        .crm-card h3 { color: var(--navy); margin-bottom: 15px; font-weight: 700; }
+        .crm-card p { color: #666; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- Coming Soon / Innovation Section --- */
+        .innovation-box {
+            margin-top: 80px;
+            padding: 50px;
+            background: var(--navy);
+            color: white;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .innovation-text h2 { color: var(--cyan); font-size: 2rem; margin-bottom: 15px; }
+        .innovation-text p { opacity: 0.8; line-height: 1.7; }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: 0.3s;
+            border: 2px solid var(--navy);
+        }
+
+        .cta-btn:hover { background: transparent; color: var(--navy); transform: scale(1.1); }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .innovation-box { flex-direction: column; text-align: center; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="../images/logo.webp" alt="Coded Clouds Logo"> 
+            </a>
+
+        <div class="nav-actions">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navigation Styling */
+    .main-nav {
+        background-color: #ffffff; /* White Background */
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+        height: 50px; /* Adjust height according to your logo */
+        display: block;
+    }
+
+    .logo span {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-weight: 800;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        background-color: rgb(17, 17, 58); /* Navy Blue */
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: 2px solid rgb(17, 17, 58);
+    }
+
+    .back-btn:hover {
+        background-color: transparent;
+        color: rgb(17, 17, 58);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .main-nav {
+            height: 70px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+
+        .back-btn span {
+            display: none; /* Mobile par sirf arrow dikhega ya text chota ho jayega */
+        }
+        
+        .back-btn {
+            padding: 10px 15px;
+        }
+
+        .back-btn::after {
+            content: 'Back'; /* Mobile par chota text */
+            display: inline-block;
+        }
+    }
+</style>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Custom CRM Solutions</h1>
+            <div class="hero-underline"></div>
+            <p>Master your customer relationships with a CRM built specifically for your workflow. We don't believe in "one size fits all" – we build what you need.</p>
+        </div>
+    </header>
+
+    <section class="crm-features">
+        <div class="container">
+            <h2 class="section-heading">Why Choose Coded Clouds CRM?</h2>
+            
+            <div class="crm-grid">
+                <div class="crm-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>Lead Management</h3>
+                    <p>Track your potential customers from first contact to final sale. Never miss a follow-up again.</p>
+                </div>
+
+                <div class="crm-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Sales Analytics</h3>
+                    <p>Get real-time insights into your sales performance with automated reports and visual dashboards.</p>
+                </div>
+
+                <div class="crm-card">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>Automated Communication</h3>
+                    <p>Integrate Email and WhatsApp automation to keep your clients engaged without manual work.</p>
+                </div>
+
+                <div class="crm-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Data Privacy</h3>
+                    <p>Your customer data is your most valuable asset. We use bank-grade encryption to keep it safe.</p>
+                </div>
+            </div>
+
+            <div class="innovation-box">
+                <i class="fas fa-rocket" style="font-size: 4rem; color: var(--cyan);"></i>
+                <div class="innovation-text">
+                    <h2>Future-Ready Systems</h2>
+                    <p>While every business is unique, we are currently designing a baseline CRM architecture that will allow for faster deployment and deeper customization for our future clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: var(--navy); margin-bottom: 20px;">Want a CRM built for YOUR business?</h2>
+            <p style="margin-bottom: 40px; color: #666;">Let's discuss your requirements and build a system that saves you hours of manual work.</p>
+            <a href="./contact.html" class="cta-btn">Get A Quote</a>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Systems - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: rgb(17, 17, 58);
+            --cyan: #00d4ff;
+            --white: #ffffff;
+            --gray: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--white); color: #333; overflow-x: hidden; }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: var(--white);
+        }
+        .hero-section h1 { color: var(--navy); font-size: 3.5rem; font-weight: 800; }
+        .hero-underline { width: 80px; height: 5px; background: var(--cyan); margin: 20px auto; border-radius: 10px; }
+        .hero-section p { color: #666; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* --- POS Features Section --- */
+        .pos-features { padding: 80px 20px; background: var(--gray); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .section-heading { text-align: center; color: var(--navy); margin-bottom: 50px; font-size: 2.2rem; }
+
+        .pos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .pos-card {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: left;
+            transition: 0.3s;
+            border-top: 5px solid var(--cyan);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .pos-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(17,17,58,0.1); }
+        .pos-card i { font-size: 2.5rem; color: var(--navy); margin-bottom: 20px; }
+        .pos-card h3 { color: var(--navy); margin-bottom: 15px; font-size: 1.3rem; }
+        .pos-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
+
+        /* --- Preview Banner --- */
+        .preview-banner {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--navy) 0%, #222266 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .preview-banner h2 { color: var(--cyan); margin-bottom: 20px; }
+        .preview-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            list-style: none;
+        }
+        .preview-list li { font-weight: 600; font-size: 1.1rem; }
+        .preview-list i { color: var(--cyan); margin-right: 10px; }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: var(--cyan);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,212,255,0.3);
+        }
+
+        .cta-btn:hover { background: var(--navy); color: white; transform: scale(1.1); }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .preview-banner { padding: 30px; }
+            .preview-list { flex-direction: column; gap: 15px; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="../images/logo.webp" alt="Coded Clouds Logo"> 
+            </a>
+
+        <div class="nav-actions">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navigation Styling */
+    .main-nav {
+        background-color: #ffffff; /* White Background */
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+        height: 50px; /* Adjust height according to your logo */
+        display: block;
+    }
+
+    .logo span {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-weight: 800;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        background-color: rgb(17, 17, 58); /* Navy Blue */
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: 2px solid rgb(17, 17, 58);
+    }
+
+    .back-btn:hover {
+        background-color: transparent;
+        color: rgb(17, 17, 58);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .main-nav {
+            height: 70px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+
+        .back-btn span {
+            display: none; /* Mobile par sirf arrow dikhega ya text chota ho jayega */
+        }
+        
+        .back-btn {
+            padding: 10px 15px;
+        }
+
+        .back-btn::after {
+            content: 'Back'; /* Mobile par chota text */
+            display: inline-block;
+        }
+    }
+</style>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Point of Sale (POS)</h1>
+            <div class="hero-underline"></div>
+            <p>Empower your retail business with a POS system that is fast, reliable, and easy to use. Manage your inventory and sales from anywhere in the world.</p>
+        </div>
+    </header>
+
+    <section class="pos-features">
+        <div class="container">
+            <h2 class="section-heading">Key Features of Our POS</h2>
+            
+            <div class="pos-grid">
+                <div class="pos-card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Quick Billing</h3>
+                    <p>Generate invoices in seconds with barcode scanning and multiple payment gateway support.</p>
+                </div>
+
+                <div class="pos-card">
+                    <i class="fas fa-boxes"></i>
+                    <h3>Inventory Tracking</h3>
+                    <p>Real-time stock updates. Get notified automatically when your products are running low.</p>
+                </div>
+
+                <div class="pos-card">
+                    <i class="fas fa-receipt"></i>
+                    <h3>Daily Reports</h3>
+                    <p>Detailed daily, weekly, and monthly sales reports to help you track your business growth.</p>
+                </div>
+
+                <div class="pos-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Multi-Store Sync</h3>
+                    <p>Manage multiple branches from a single admin panel with seamless data synchronization.</p>
+                </div>
+            </div>
+
+            <div class="preview-banner">
+                <h2>Launching Custom POS for Every Niche</h2>
+                <p>We are engineering specialized POS modules for:</p>
+                <ul class="preview-list">
+                    <li><i class="fas fa-check-circle"></i> Restaurants & Cafes</li>
+                    <li><i class="fas fa-check-circle"></i> Retail & Fashion</li>
+                    <li><i class="fas fa-check-circle"></i> Pharmacies</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: var(--navy); margin-bottom: 20px;">Get a Tailored POS Solution</h2>
+            <p style="margin-bottom: 40px; color: #666;">Contact us today to discuss your store's requirements and get a custom quote.</p>
+            <a href="./contact.html" class="cta-btn">Book A Demo</a>
+        </div>
+    </section>
+
+</body>
+</html>

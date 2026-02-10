@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: rgb(17, 17, 58);
+            --cyan: #00d4ff;
+            --white: #ffffff;
+            --gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 120px 20px 80px;
+            text-align: center;
+            background: var(--white);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-section h1 {
+            color: var(--navy);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero-section p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .hero-underline {
+            width: 80px;
+            height: 5px;
+            background: var(--cyan);
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+        /* --- Portfolio Section (Videos) --- */
+        .portfolio-section {
+            padding: 80px 20px;
+            background: var(--gray);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .web-project {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 100px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease;
+        }
+
+        .web-project:hover {
+            transform: translateY(-10px);
+        }
+
+        .web-project:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .video-container {
+            flex: 1.2;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 4px solid var(--navy);
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-info h2 {
+            color: var(--navy);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .project-info p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-tags span {
+            background: var(--navy);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: var(--navy);
+            color: white;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            margin-top: -50px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--cyan);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,212,255,0.3);
+        }
+
+        .cta-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .web-project, .web-project:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-section h1 { font-size: 2.5rem; }
+            .cta-section h2 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="../images/logo.webp" alt="Coded Clouds Logo"> 
+            </a>
+
+        <div class="nav-actions">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navigation Styling */
+    .main-nav {
+        background-color: #ffffff; /* White Background */
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+        height: 50px; /* Adjust height according to your logo */
+        display: block;
+    }
+
+    .logo span {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-weight: 800;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        background-color: rgb(17, 17, 58); /* Navy Blue */
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: 2px solid rgb(17, 17, 58);
+    }
+
+    .back-btn:hover {
+        background-color: transparent;
+        color: rgb(17, 17, 58);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .main-nav {
+            height: 70px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+
+        .back-btn span {
+            display: none; /* Mobile par sirf arrow dikhega ya text chota ho jayega */
+        }
+        
+        .back-btn {
+            padding: 10px 15px;
+        }
+
+        .back-btn::after {
+            content: 'Back'; /* Mobile par chota text */
+            display: inline-block;
+        }
+    }
+</style>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Web Development</h1>
+            <div class="hero-underline"></div>
+            <p>Creating digital experiences that matter. We build high-performance, secure, and stunning websites tailored for your business growth.</p>
+        </div>
+    </header>
+
+    <section class="portfolio-section">
+        <div class="container">
+            
+            <div class="web-project">
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="./videos/pro-web.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h2>PRO Website</h2>
+                    <p>A professional rehabilitation solution dedicated to helping individuals overcome drug addiction. Focused on compassionate care, structured recovery programs, and a supportive environment to ensure long-term healing and reintegration into society.</p>
+                     
+                </div>
+            </div>
+
+            <div class="web-project">
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="./videos/hamsabkaatta.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-info">
+                    <h2>HAM SAB KA ATTA</h2>
+                    <p>professionally developed website created for a Portugal-based client, delivering a clean, fast, and user-friendly experience.</p>
+                    
+                </div>
+            </div>
+
+        </div>
+         <section class="client-grid">
+    <div class="container">
+        <h3>Our Successful Implementations</h3>
+        <div class="clients">
+            
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/PRO.webp" alt="MARIA FMS Logo" class="client-logo">
+                </div>
+                <div class="client-name">PRO</div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="./images/logos/saudi-health.png" alt="UNAVALIABLE" class="client-logo">
+                </div>
+                <div class="client-name">HAM SB KA ATTA</div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/rooh.png" alt="TECH CORE Logo" class="client-logo">
+                </div>
+                <div class="client-name">ROOH REHABS</div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/sakoon.png" alt="ELITE ESTATE Logo" class="client-logo">
+                </div>
+                <div class="client-name">SAKOON REHABS</div>
+            </div>
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/misbar.webp" alt=" " class="client-logo">
+                </div>
+                <div class="client-name">MISBAR SAUDI</div>
+            </div>
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/madni.png" alt="ELITE ESTATE Logo" class="client-logo">
+                </div>
+                <div class="client-name">MADNI STEELS</div>
+            </div>
+            
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .client-grid {
+        padding: 80px 20px;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    .client-grid h3 {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .clients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Client Card Styling */
+    .client-card {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 20px;
+        width: 220px;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(17, 17, 58, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .client-card:hover {
+        transform: translateY(-10px);
+        background: #ffffff;
+        box-shadow: 0 15px 35px rgba(17, 17, 58, 0.1);
+        border-color: #00d4ff; /* Cyan border on hover */
+    }
+
+    /* Logo Wrapper */
+    .client-logo-wrapper {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .client-logo {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; 
+        opacity: 0.7;
+        transition: all 0.4s ease;
+    }
+
+    .client-card:hover .client-logo {
+        filter: grayscale(0%); /* Hover par colors wapis aa jayein gy */
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    /* Name Styling */
+    .client-name {
+        font-weight: 700;
+        color: rgb(17, 17, 58);
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .client-card {
+            width: 160px;
+            padding: 15px;
+        }
+        .client-grid h3 {
+            font-size: 1.6rem;
+        }
+    }
+</style>
+
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Create Your Dream Website?</h2>
+            <p style="margin-bottom: 40px; opacity: 0.8;">Tell us your vision — we’ll bring it to life.</p>
+            <a href="./contact.html" class="cta-btn">Start Your Project Now</a>
+        </div>
+    </section>
+
+</body>
+</html>

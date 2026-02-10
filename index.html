@@ -387,88 +387,556 @@
 </script>
 <!--serviceee-->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- =========================
      8. SERVICES SECTION (View More Logic)
      ========================= -->
-<section class="services-section" id="service" data-aos="fade-up" style="margin-top: 50px;">
-    
-    <div class="container text-center mb-5">
-        <h2 class="services-title">Transform Your Business</h2>
-    </div>
-
-    <!-- MAIN GRID CONTAINER -->
-    <div class="services-grid">
+<section class="drug-awareness-section">
+    <div class="container-fluid px-0"> 
         
-        <!-- --- INITIAL 4 CARDS (Always Visible) --- -->
-
-        <!-- Card 1 -->
-        <div class="service-card card-1" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-bg"></div>
-            <div class="service-overlay"></div>
-            <span class="service-name">WEB DEVELOPMENT</span>
+        <div class="text-center mb-5 mt-5"> 
+            <h2 class="section-title">Transform Your Business</h2> 
         </div>
 
-        <!-- Card 2 -->
-        <div class="service-card card-2" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-bg"></div>
-            <div class="service-overlay"></div>
-            <span class="service-name">APP DEVELOPMENT</span>
-        </div>
+        <div class="drugs-row">
+            
+           
 
-        <!-- Card 3 -->
-        <div class="service-card card-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-bg"></div>
-            <div class="service-overlay"></div>
-            <span class="service-name">PMS DEVELOPMENT</span>
-        </div>
+            <a href="./Components/web.html" class="drug-card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front" style="background-image: url('./images/web.webp');">
+                        <div class="drug-overlay"></div>
+                        <h3 style="color: rgb(255, 255, 255);">Web Development</h3>
+                    </div>
+                    <div class="card-back">
+                        <h3>Web Dev.</h3> 
+                       <ul>
+    <li>
+        <i class="fa-solid fa-code"></i> 
+        Clean & Scalable Code
+    </li>
+    <li>
+        <i class="fa-solid fa-laptop-code"></i> 
+        Responsive & Modern UI
+    </li>
+    <li>
+        <i class="fa-solid fa-gauge-high"></i> 
+        Fast Performance & SEO Friendly
+    </li>
+</ul>
 
-        <!-- Card 4 -->
-        <div class="service-card card-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-bg"></div>
-            <div class="service-overlay"></div>
-            <span class="service-name">DIGITAL MARKETING</span>
-        </div>
-
-        <!-- --- HIDDEN CARDS (Only Show on Click) --- -->
-        <!-- Inko hum CSS/JS se hide/show karenge -->
-        
-        <div class="hidden-services" id="extraServices" style="display: none; width: 100%;">
-            <div class="services-grid mt-3"> <!-- Nested Grid for Hidden Items -->
-                
-                <!-- Card 5 -->
-                <div class="service-card card-5">
-                    <div class="service-bg"></div>
-                    <div class="service-overlay"></div>
-                    <span class="service-name">FULL CRM</span>
+                    </div>
                 </div>
+            </a>
 
-                <!-- Card 6 -->
-                <div class="service-card card-6">
-                    <div class="service-bg"></div>
-                    <div class="service-overlay"></div>
-                    <span class="service-name">POS SOFTWARE</span>
-                </div>
-
-                <!-- Card 7 -->
-                <div class="service-card card-7">
-                    <div class="service-bg"></div>
-                    <div class="service-overlay"></div>
-                    <span class="service-name">ECOMMERCE SERVICES</span>
-                </div>
-
-            </div>
+           <a href="./Components/app.html" class="drug-card" onclick="flipCard(this)">
+    <div class="card-inner">
+        <div class="card-front" style="background-image: url('./Images/app.webp');">
+            <div class="drug-overlay"></div>
+            <h3  style="color: rgb(255, 255, 255);">App Development</h3>
         </div>
-
+        <div class="card-back">
+            <h3>App Development</h3>
+            <p class="impact"><strong>Focus:</strong> Performance & UX</p>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-mobile-screen-button"></i> 
+                    Android & iOS Apps
+                </li>
+                <li>
+                    <i class="fa-solid fa-layer-group"></i> 
+                    Smooth UI / UX Flow
+                </li>
+                <li>
+                    <i class="fa-solid fa-shield-halved"></i> 
+                    Secure & Scalable Apps
+                </li>
+            </ul>
+        </div>
     </div>
+</a>
 
-    <!-- BUTTONS -->
-    <div class="services-actions">
-        <button id="viewMoreBtn" class="btn btn-primary" ><a href="./Components/service.html" style="text-decoration: none; color: #939295;">View More</a></button>
-        <button id="viewLessBtn" class="btn btn-outline-secondary" onclick="toggleServices()" style="display: none;">View Less</button>
-         
+
+           <a href="./Components/pms.html"  class="drug-card" onclick="flipCard(this)">
+    <div class="card-inner">
+        <div class="card-front" style="background-image: url('./Images/PMs.png');">
+            <div class="drug-overlay"></div>
+            <h3  style="color: rgb(255, 255, 255);">PMS Development</h3>
+        </div>
+        <div class="card-back">
+            <h3>PMS Development</h3>
+            <p class="impact"><strong>Focus:</strong> Smart Property Control</p>
+            <ul>
+                <li><i class="fa-solid fa-building"></i> Property & Tenant Management</li>
+                <li><i class="fa-solid fa-file-invoice"></i> Automated Billing System</li>
+                <li><i class="fa-solid fa-chart-line"></i> Real-Time Reports</li>
+            </ul>
+        </div>
     </div>
+</a>
 
+
+           <a href="./Components/marketing.html"  class="drug-card" onclick="flipCard(this)">
+    <div class="card-inner">
+        <div class="card-front" style="background-image: url('./Images/marketing.webp');">
+            <div class="drug-overlay"></div>
+            <h3  style="color: rgb(255, 255, 255);">Digital Marketing</h3>
+        </div>
+        <div class="card-back">
+            <h3>Digital Marketing</h3>
+            <p class="impact"><strong>Focus:</strong> Growth & Visibility</p>
+            <ul>
+                <li><i class="fa-solid fa-bullhorn"></i> Social Media Campaigns</li>
+                <li><i class="fa-solid fa-magnifying-glass-chart"></i> SEO & Analytics</li>
+                <li><i class="fa-solid fa-users"></i> Lead Generation</li>
+            </ul>
+        </div>
+    </div>
+</a>
+
+
+        </div>
+
+        <div class="drugs-row mt-3">
+            
+           <a href="./Components/crm.html"  class="drug-card" onclick="flipCard(this)">
+    <div class="card-inner">
+        <div class="card-front" style="background-image: url('./Images/crm.webp');">
+            <div class="drug-overlay"></div>
+            <h3  style="color: rgb(255, 255, 255);">Full CRM</h3>
+        </div>
+        <div class="card-back">
+            <h3>Full CRM System</h3>
+            <p class="impact"><strong>Focus:</strong> Business Automation</p>
+            <ul>
+                <li><i class="fa-solid fa-user-gear"></i> Client Management</li>
+                <li><i class="fa-solid fa-diagram-project"></i> Sales Pipeline Tracking</li>
+                <li><i class="fa-solid fa-robot"></i> Workflow Automation</li>
+            </ul>
+        </div>
+    </div>
+</a>
+
+
+            
+
+           <a href="./Components/pos.html"  class="drug-card" onclick="flipCard(this)">
+    <div class="card-inner">
+        <div class="card-front" style="background-image: url('./Images/6a327a49c84f482a9fd9ba0451a31765.webp');">
+            <div class="drug-overlay"></div>
+            <h3  style="color: rgb(255, 255, 255);">POS Software</h3>
+        </div>
+        <div class="card-back">
+            <h3>POS Software</h3>
+            <p class="impact"><strong>Focus:</strong> Fast & Accurate Sales</p>
+            <ul>
+                <li><i class="fa-solid fa-cash-register"></i> Quick Billing</li>
+                <li><i class="fa-solid fa-boxes-stacked"></i> Inventory Control</li>
+                <li><i class="fa-solid fa-receipt"></i> Sales Reports</li>
+            </ul>
+        </div>
+    </div>
+</a>
+
+
+          <a href="./Components/E-com.html"  class="drug-card" onclick="flipCard(this)">
+    <div class="card-inner">
+        <div class="card-front" style="background-image: url('./Images/5c77ba78b22044d5ba75652b75559eec.webp');">
+            <div class="drug-overlay"></div>
+            <h3  style="color: rgb(255, 255, 255);">Ecommerce Services</h3>
+        </div>
+        <div class="card-back">
+            <h3>Ecommerce Services</h3>
+            <p class="impact"><strong>Focus:</strong> Online Sales Growth</p>
+            <ul>
+                <li><i class="fa-solid fa-cart-shopping"></i> Online Store Setup</li>
+                <li><i class="fa-solid fa-credit-card"></i> Secure Payments</li>
+                <li><i class="fa-solid fa-truck-fast"></i> Order Management</li>
+            </ul>
+        </div>
+    </div>
+</a>
+
+
+            
+
+        </div>
+    </div>
 </section>
+
+<script>
+    function flipCard(card) {
+        if (window.innerWidth < 992) {
+            card.classList.toggle('flipped');
+        }
+    }
+</script>
+<style>
+
+    
+    /* ========================
+   DRUG AWARENESS (10 CARDS GRID - FIXED)
+   ======================== */
+.drug-awareness-section {
+    padding: 0 0 80px 0;
+    background-color: var(--light);
+}
+
+/* Container for each row */
+.drugs-container {
+    display: flex;
+    width: 95%; 
+    max-width: 1400px;
+    height: 250px; /* Fixed Height Desktop */
+    margin: 0 auto;
+    gap: 10px;
+}
+
+/* --- CARD (PANEL) STYLING --- */
+.drug-panel {
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    flex: 1; 
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- HOVER & ACTIVE EFFECT (DESKTOP) --- */
+/* .active class add ki hai taake JS se click par bhi chalay */
+.drug-panel:hover,
+.drug-panel.active {
+    flex: 3; /* Expand Card */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border-color: var(--primary);
+}
+
+/* Dark Overlay */
+.drug-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgb(17, 17, 58) 15%, rgb(17, 17, 58) 40%, transparent 100%);
+    z-index: 1;
+}
+ 
+
+/* --- HEADINGS --- */
+.drug-panel h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0;
+    z-index: 2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+    transform: none; 
+    writing-mode: horizontal-tb;
+    pointer-events: none; /* Click pass-through */
+}
+
+/* Hover/Active Heading */
+.drug-panel:hover h3,
+.drug-panel.active h3 {
+    bottom: auto;
+    top: 25px;
+    left: 20px;
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+/* --- DRUG INFO --- */
+.drug-info {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    right: 10px;
+    opacity: 0;
+    z-index: 2;
+    transform: translateY(20px);
+    transition: 0.5s ease;
+    transition-delay: 0.1s;
+    min-width: 250px;
+    pointer-events: none; /* Click pass-through */
+}
+
+/* Hover/Active Info Show */
+.drug-panel:hover .drug-info,
+.drug-panel.active .drug-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.danger-text { 
+    font-size: 0.9rem; 
+    margin-bottom: 10px; 
+    font-weight: 300; 
+    line-height: 1.3;
+}
+
+.danger-list { list-style: none; padding: 0; margin: 0; }
+.danger-list li { 
+    font-size: 0.85rem; 
+    margin-bottom: 5px; 
+    font-weight: 600; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+.danger-list i { color: #ff4d4d; font-size: 1rem; }
+/* ========================
+   DRUG AWARENESS (FIXED LAYOUT)
+   ======================== */
+.drug-awareness-section {
+    padding: 0 0 80px 0;
+    background-color: var(--light);
+}
+
+/* -----------------------------
+   DESKTOP STYLES (EXPAND ON HOVER)
+   ----------------------------- */
+@media (min-width: 992px) {
+    
+    /* Har Row ko alag flex container banaya */
+    .drugs-row {
+        display: flex;
+        width: 95%;
+        max-width: 1400px;
+        margin: 0 auto;
+        gap: 10px;
+        justify-content: center;
+        height: 250px; /* Desktop Height Fixed */
+    }
+
+    /* Card styling */
+    .drug-card {
+        flex: 1; /* By default sab barabar (1x) */
+        border-radius: 15px;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        overflow: hidden;
+    }
+
+    .card-inner { width: 100%; height: 100%; }
+    
+    .card-front {
+        width: 100%; height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+    }
+
+    /* --- HOVER MAGIC --- */
+    .drug-card:hover {
+        flex: 3; /* Hover karne par 3x bara ho jaye */
+        z-index: 10;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* Heading Animation */
+    .card-front h3 {
+        position: absolute;
+        bottom: 20px; left: 20px;
+        color: white; font-size: 1.2rem; text-transform: uppercase;
+        z-index: 2; font-weight: 800;
+        transition: 0.4s;
+    }
+
+    .drug-card:hover .card-front h3 {
+        bottom: auto; top: 20px; font-size: 2rem; color: var(--accent);
+    }
+
+    /* Back Info (Fade In) */
+    .card-back {
+        position: absolute;
+        bottom: 20px; left: 20px;
+        opacity: 0;
+        transition: 0.5s ease;
+        z-index: 3;
+        color: white;
+        pointer-events: none;
+    }
+
+    .drug-card:hover .card-back {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .card-back h3 { display: none; } /* Desktop pe naam front se ayega */
+    
+    .drug-overlay {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to top,  rgba(17, 17, 58, 0.745), transparent);
+    }
+}
+
+/* -----------------------------
+   MOBILE STYLES (GRID + FLIP)
+   ----------------------------- */
+@media (max-width: 991px) {
+    
+    /* MOBILE FIX: Container ko 'contents' display kar diya taake rows ka structure toot jaye */
+    /* Is se saare cards aik hi flow mein aa jayenge */
+    .drugs-row {
+        display: contents; 
+    }
+
+    /* Ab hum aik naya grid container banayenge jo wrap karega */
+    /* Lekin chunke HTML mein 2 alag rows hain, hum unko CSS Grid se jor nahi sakte easily */
+    /* Isliye best tareeqa ye hai ke hum cards ko seedha float karwayen */
+
+    .drug-awareness-section .container-fluid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 Cards per line */
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    /* Heading waghaira ko full width dena parega */
+    .text-center {
+        grid-column: 1 / -1; /* Heading poori jagah le */
+    }
+
+    /* 3D Flip Setup */
+    .drug-card {
+        background-color: transparent;
+        height: 220px; /* Card Height */
+        perspective: 1000px;
+        cursor: pointer;
+        width: 100%; /* Full width of column */
+        margin-bottom: 0; /* Gap grid sambhal lega */
+    }
+
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 15px;
+    }
+
+    /* Javascript class for Flip */
+    .drug-card.flipped .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Peeche se chup jaye */
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    /* Front Side */
+    .card-front {
+        background-color: #bbb;
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    .card-front h3 {
+        position: absolute;
+        bottom: 10px; left: 0; right: 0;
+        font-size: 1rem;
+        background: rgb(17, 17, 58);
+        padding: 5px;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    /* Back Side (Rotated) */
+    .card-back {
+        background-color: var(--secondary); /* Dark Green */
+        color: white;
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .card-back h3 {
+        font-size: 1.1rem;
+        color: var(--accent);
+        margin-bottom: 5px;
+    }
+
+    .card-back .impact { font-size: 0.8rem; margin-bottom: 8px; }
+
+    .card-back ul { list-style: none; padding: 0; text-align: left; }
+
+    .card-back li {
+        font-size: 0.75rem; 
+        margin-bottom: 4px;
+        display: flex; align-items: center; gap: 5px;
+    }
+    
+    .card-back i { color: #ff6b6b; font-size: 0.9rem; }
+    
+    .drug-overlay { display: none; }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- SCRIPT FOR TOGGLE -->
 <script>

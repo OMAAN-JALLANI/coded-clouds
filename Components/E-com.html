@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Solutions - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: rgb(17, 17, 58);
+            --cyan: #00d4ff;
+            --white: #ffffff;
+            --gray: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--white); color: #333; overflow-x: hidden; }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: var(--white);
+        }
+        .hero-section h1 { color: var(--navy); font-size: 3.5rem; font-weight: 800; }
+        .hero-underline { width: 80px; height: 5px; background: var(--cyan); margin: 20px auto; border-radius: 10px; }
+        .hero-section p { color: #666; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* --- E-com Features Section --- */
+        .ecom-features { padding: 80px 20px; background: var(--gray); }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .section-heading { text-align: center; color: var(--navy); margin-bottom: 50px; font-size: 2.2rem; }
+
+        .ecom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .ecom-card {
+            background: var(--white);
+            padding: 40px 25px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .ecom-card:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(17,17,58,0.1); }
+        .ecom-card i { font-size: 3rem; color: var(--navy); margin-bottom: 20px; }
+        .ecom-card h3 { color: var(--navy); margin-bottom: 15px; font-size: 1.4rem; }
+        .ecom-card p { color: #777; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- Coming Soon Concept --- */
+        .concept-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: var(--navy);
+            color: white;
+            margin: 50px 0;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        }
+
+        .concept-section h2 { color: var(--cyan); margin-bottom: 20px; }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: 0.3s;
+            border: 2px solid var(--navy);
+        }
+
+        .cta-btn:hover { background: transparent; color: var(--navy); transform: scale(1.1); }
+
+        /* --- Mobile --- */
+        @media (max-width: 768px) {
+            .hero-section h1 { font-size: 2.5rem; }
+            .section-heading { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="../images/logo.webp" alt="Coded Clouds Logo"> 
+            </a>
+
+        <div class="nav-actions">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navigation Styling */
+    .main-nav {
+        background-color: #ffffff; /* White Background */
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+        height: 50px; /* Adjust height according to your logo */
+        display: block;
+    }
+
+    .logo span {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-weight: 800;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        background-color: rgb(17, 17, 58); /* Navy Blue */
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: 2px solid rgb(17, 17, 58);
+    }
+
+    .back-btn:hover {
+        background-color: transparent;
+        color: rgb(17, 17, 58);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .main-nav {
+            height: 70px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+
+        .back-btn span {
+            display: none; /* Mobile par sirf arrow dikhega ya text chota ho jayega */
+        }
+        
+        .back-btn {
+            padding: 10px 15px;
+        }
+
+        .back-btn::after {
+            content: 'Back'; /* Mobile par chota text */
+            display: inline-block;
+        }
+    }
+</style>
+    <header class="hero-section">
+        <div class="container">
+            <h1>E-Commerce Solutions</h1>
+            <div class="hero-underline"></div>
+            <p>Transform your traditional business into a 24/7 global online store. We build high-converting e-commerce platforms designed for sales.</p>
+        </div>
+    </header>
+
+    <section class="ecom-features">
+        <div class="container">
+            <h2 class="section-heading">Why Go Digital With Us?</h2>
+            
+            <div class="ecom-grid">
+                <div class="ecom-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Smart Cart System</h3>
+                    <p>Optimized checkout process to reduce cart abandonment and increase conversion rates.</p>
+                </div>
+
+                <div class="ecom-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Secure Payments</h3>
+                    <p>Integration with Stripe, PayPal, and local gateways to ensure safe transactions.</p>
+                </div>
+
+                <div class="ecom-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Ready</h3>
+                    <p>More than 80% of shoppers are on mobile. Our stores look stunning on every screen size.</p>
+                </div>
+
+                <div class="ecom-card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Easy Inventory</h3>
+                    <p>Manage thousands of products, categories, and variations with a simple admin panel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="concept-section">
+        <div class="container">
+            <h2>Expanding Your Retail Reach</h2>
+            <p style="max-width: 700px; margin: 0 auto; opacity: 0.9;">We are currently developing a robust e-commerce framework that focuses on speed, SEO, and user retention. Stay tuned for our upcoming shop implementations.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: var(--navy); margin-bottom: 20px;">Ready to Sell Online?</h2>
+            <p style="margin-bottom: 40px; color: #666;">Get a custom e-commerce strategy that fits your brand and budget.</p>
+            <a href="./contact.html" class="cta-btn">Launch My Store</a>
+        </div>
+    </section>
+
+</body>
+</html>

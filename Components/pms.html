@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMS Development - Coded Clouds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: rgb(17, 17, 58);
+            --cyan: #00d4ff;
+            --white: #ffffff;
+            --gray: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--white); color: #333; overflow-x: hidden; }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: var(--white);
+            animation: fadeIn 1s ease-in;
+        }
+        .hero-section h1 { color: var(--navy); font-size: 3.5rem; font-weight: 800; }
+        .hero-underline { width: 80px; height: 5px; background: var(--cyan); margin: 20px auto; border-radius: 10px; }
+        .hero-section p { color: #666; font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* --- Portfolio Section --- */
+        .portfolio-section { padding: 80px 20px; background: var(--gray); }
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        .pms-project {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            transition: 0.4s;
+        }
+        .pms-project:nth-child(even) { flex-direction: row-reverse; }
+        .pms-project:hover { transform: translateY(-10px); }
+
+        .video-box {
+            flex: 1.2;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 5px solid var(--navy);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .video-box video { width: 100%; display: block; }
+
+        .project-content { flex: 1; }
+        .project-content h2 { color: var(--navy); font-size: 2.2rem; margin-bottom: 15px; }
+        .project-content p { color: #555; line-height: 1.7; margin-bottom: 20px; }
+        
+        .feature-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .feature-tags span { 
+            background: rgba(17, 17, 58, 0.1); 
+            color: var(--navy); 
+            padding: 6px 15px; 
+            border-radius: 5px; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            border: 1px solid var(--navy);
+        }
+
+        /* --- Client List Section --- */
+        .client-grid {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .client-grid h3 { color: var(--navy); margin-bottom: 30px; font-size: 1.8rem; }
+        .clients { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        .client-name { 
+            background: var(--white); 
+            padding: 15px 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: var(--navy);
+            color: white;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+        .cta-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 18px 50px;
+            background: var(--cyan);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+        .cta-btn:hover { background: white; transform: scale(1.1); }
+
+        /* --- Animations --- */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .pms-project, .pms-project:nth-child(even) { flex-direction: column; text-align: center; padding: 20px; }
+            .hero-section h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="../images/logo.webp" alt="Coded Clouds Logo"> 
+            </a>
+
+        <div class="nav-actions">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    /* Navigation Styling */
+    .main-nav {
+        background-color: #ffffff; /* White Background */
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+        height: 50px; /* Adjust height according to your logo */
+        display: block;
+    }
+
+    .logo span {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-weight: 800;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    /* Back Button Styling */
+    .back-btn {
+        background-color: rgb(17, 17, 58); /* Navy Blue */
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        border: 2px solid rgb(17, 17, 58);
+    }
+
+    .back-btn:hover {
+        background-color: transparent;
+        color: rgb(17, 17, 58);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .main-nav {
+            height: 70px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+
+        .back-btn span {
+            display: none; /* Mobile par sirf arrow dikhega ya text chota ho jayega */
+        }
+        
+        .back-btn {
+            padding: 10px 15px;
+        }
+
+        .back-btn::after {
+            content: 'Back'; /* Mobile par chota text */
+            display: inline-block;
+        }
+    }
+</style>
+    <header class="hero-section">
+        <div class="container">
+            <h1>Management Systems</h1>
+            <div class="hero-underline"></div>
+            <p>Streamline your business operations with our custom-built Management Systems. From Finance to Healthcare, we provide robust solutions for data-driven success.</p>
+        </div>
+    </header>
+
+    <section class="portfolio-section">
+        <div class="container">
+            
+            <div class="pms-project">
+                <div class="video-box">
+                    <video controls muted>
+                        <source src="./videos/rooh-rehab.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h2>ROOH REHAB</h2>
+                    <p>A specialized healthcare management system designed for rehabilitation centers. It features patient tracking, session scheduling, and progress analytics with top-tier data security.</p>
+                    <div class="feature-tags">
+                        <span>Patient Records</span>
+                        <span>Billing</span>
+                        <span>HIPAA Compliant</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pms-project">
+                <div class="video-box">
+                    <video controls muted>
+                        <source src="./videos/pro-pms.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h2>PRO Management</h2>
+                    <p>A comprehensive corporate PMS focused on workflow automation. It manages employee tasks, project timelines, and financial reports in a single, intuitive dashboard.</p>
+                    <div class="feature-tags">
+                        <span>Workflow Automation</span>
+                        <span>Reporting</span>
+                        <span>Cloud Storage</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="client-grid">
+    <div class="container">
+        <h3>Our Successful Implementations</h3>
+        <div class="clients">
+            
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/PRO.webp" alt="MARIA FMS Logo" class="client-logo">
+                </div>
+                <div class="client-name">PRO</div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="./images/logos/saudi-health.png" alt="SAUDI HEALTH Logo" class="client-logo">
+                </div>
+                <div class="client-name">SAUDI HEALTH</div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/rooh.png" alt="TECH CORE Logo" class="client-logo">
+                </div>
+                <div class="client-name">ROOH REHABS</div>
+            </div>
+
+            <div class="client-card">
+                <div class="client-logo-wrapper">
+                    <img src="../images/sakoon.png" alt="ELITE ESTATE Logo" class="client-logo">
+                </div>
+                <div class="client-name">SAKOON REHABS</div>
+            </div>
+            
+
+        </div>
+    </div>
+</section>
+
+<style>
+    .client-grid {
+        padding: 80px 20px;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    .client-grid h3 {
+        color: rgb(17, 17, 58); /* Navy Blue */
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .clients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Client Card Styling */
+    .client-card {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 20px;
+        width: 220px;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(17, 17, 58, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .client-card:hover {
+        transform: translateY(-10px);
+        background: #ffffff;
+        box-shadow: 0 15px 35px rgba(17, 17, 58, 0.1);
+        border-color: #00d4ff; /* Cyan border on hover */
+    }
+
+    /* Logo Wrapper */
+    .client-logo-wrapper {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .client-logo {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: grayscale(100%); /* Shuru mein black and white */
+        opacity: 0.7;
+        transition: all 0.4s ease;
+    }
+
+    .client-card:hover .client-logo {
+        filter: grayscale(0%); /* Hover par colors wapis aa jayein gy */
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    /* Name Styling */
+    .client-name {
+        font-weight: 700;
+        color: rgb(17, 17, 58);
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .client-card {
+            width: 160px;
+            padding: 15px;
+        }
+        .client-grid h3 {
+            font-size: 1.6rem;
+        }
+    }
+</style>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need a Custom System for Your Business?</h2>
+            <p>Our experts are ready to build a system that fits your specific needs.</p>
+            <a href="./contact.html" class="cta-btn">Talk to an Expert</a>
+        </div>
+    </section>
+
+</body>
+</html>
