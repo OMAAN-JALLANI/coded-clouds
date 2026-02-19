@@ -1110,7 +1110,196 @@
     });
 </script>
 <!--our teammmmmm-->
+<section class="team-hierarchy">
+    <div class="team-container">
+        <h2 class="team-heading">Our Core Leadership</h2>
+        <p class="team-subheading">The experts behind Code Care System & Coded Clouds</p>
 
+        <div class="hierarchy-wrapper">
+            <div class="admin-row">
+                <div class="team-node admin-node">
+                    <div class="node-content">
+                        <div class="node-icon"><i class="fas fa-user-shield"></i></div>
+                        <h3>ADMIN</h3>
+                    </div>
+                </div>
+            </div>
+
+            <svg class="tree-lines" viewBox="0 0 1000 200" preserveAspectRatio="none">
+                <path d="M500,0 L500,100 M100,100 L900,100 M100,100 L100,200 M300,100 L300,200 M500,100 L500,200 M700,100 L700,200 M900,100 L900,200" 
+                      fill="none" stroke="#6c5ce7" stroke-width="2" stroke-dasharray="8,5" class="animated-path"/>
+            </svg>
+
+            <div class="members-grid">
+                <div class="team-node member-node">
+                    <div class="node-content">
+                        <h3>Omaan</h3>
+                        <p>Front-end Dev</p>
+                    </div>
+                </div>
+                <div class="team-node member-node">
+                    <div class="node-content">
+                        <h3>Moueen</h3>
+                        <p>full stack Web Specialist</p>
+                    </div>
+                </div>
+               
+                <div class="team-node member-node">
+                    <div class="node-content">
+                        <h3>Talha</h3>
+                        <p>Graphic Designer</p>
+                    </div>
+                </div>
+                <div class="team-node member-node">
+                    <div class="node-content">
+                        <h3>Areesa</h3>
+                        <p>Junior Dev & Designer</p>
+                    </div>
+                </div>
+                 <a href="./Components/join us.html">
+                    <button class="team-node member-node" style="background-color: #11113a; color: #b0b0b0; border: none;" >
+                    <div class="node-content" >
+                        <h3 style="color: white;">Join US?</h3>
+                        <p>click to apply</p>
+                    </div>
+                </button>
+                 </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .team-hierarchy {
+        background: #ffffff;
+        padding: 80px 20px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .team-heading {
+        color: rgb(17, 17, 58);
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .team-subheading {
+        color: #666;
+        margin-bottom: 60px;
+    }
+
+    .hierarchy-wrapper {
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Admin Centering */
+    .admin-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    /* SVG Lines Logic */
+    .tree-lines {
+        width: 100%;
+        height: 120px;
+        margin-top: -20px;
+        margin-bottom: 20px;
+        z-index: 1;
+    }
+
+    .animated-path {
+        animation: dashFlow 2s linear infinite;
+    }
+
+    @keyframes dashFlow {
+        from { stroke-dashoffset: 40; }
+        to { stroke-dashoffset: 0; }
+    }
+
+    /* Nodes Styling */
+    .team-node {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(17, 17, 58, 0.47);
+        border: 2px solid #efedff;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        z-index: 2;
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .admin-node { width: 180px; border-color: rgb(17, 17, 58); }
+    .admin-node h3 { color: rgb(17, 17, 58); font-weight: 800; }
+
+    /* Members Grid - 5 Columns for Desktop */
+    .members-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        width: 100%;
+    }
+
+    .member-node { width: 100%; }
+    .member-node h3 { color: rgb(17, 17, 58); font-size: 1.1rem; }
+    .member-node p { color: #888; font-size: 0.8rem; margin-top: 5px; }
+
+    /* Animations */
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .team-node:hover {
+        transform: scale(1.1) translateY(-15px) !important;
+        box-shadow: 0 20px 40px rgba(17, 17, 58, 0.422);
+        border-color: rgb(17, 17, 58);
+    }
+#tree-jtree-j{
+    background-color: #050a18;
+    color: white;
+}
+    /* MOBILE VIEW FIXES */
+    @media (max-width: 900px) {
+        .tree-lines { display: none; } /* Lines removed for clarity */
+        
+        .members-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 bando ka grid mobile par */
+            gap: 15px;
+        }
+
+        .admin-row { margin-bottom: 40px; }
+    }
+
+    @media (max-width: 500px) {
+        .members-grid {
+            grid-template-columns: 1fr; /* Full width boxes for very small screens */
+        }
+    }
+</style>
+
+<script>
+    const nodes = document.querySelectorAll('.team-node');
+    nodes.forEach(node => {
+        node.addEventListener('mousemove', (e) => {
+            let x = e.offsetX; let y = e.offsetY;
+            let moveX = (x - node.clientWidth/2) / 8;
+            let moveY = (y - node.clientHeight/2) / 8;
+            node.style.transform = `rotateX(${moveY}deg) rotateY(${moveX}deg) scale(1.05)`;
+        });
+        node.addEventListener('mouseleave', () => {
+            node.style.transform = `rotateX(0deg) rotateY(0deg) scale(1)`;
+        });
+    });
+</script>
  
   <!--CEO-->
   <section class="ceo-message-section" id="ceo-section">
