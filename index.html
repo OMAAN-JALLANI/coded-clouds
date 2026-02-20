@@ -1087,7 +1087,7 @@
                 <span class="sub-heading">Human-first is our foundation.</span>
                 <p>Join a culture that celebrates excellence and diversity, Globally!</p>
                 
-                <a href="./Components/join us.html" style="text-decoration: none; width: 150px;" data-aos="fade-up"><button class="join-btn">Join Us</button></a>
+               <!----> <a href="./Components/join us.html" style="text-decoration: none; width: 150px;" data-aos="fade-up"><button class="join-btn">Join Us</button></a>
             </div>
 
         </div>
@@ -1113,7 +1113,7 @@
 <section class="team-hierarchy">
     <div class="team-container">
         <h2 class="team-heading">Our Core Leadership</h2>
-        <p class="team-subheading">The experts behind Code Care System & Coded Clouds</p>
+        <p class="team-subheading">The experts behind Coded Clouds</p>
 
         <div class="hierarchy-wrapper">
             <div class="admin-row">
@@ -1133,20 +1133,20 @@
             <div class="members-grid">
                 <div class="team-node member-node">
                     <div class="node-content">
-                        <h3>Omaan</h3>
-                        <p>Front-end Dev</p>
+                        <h3>Omaan Jallane</h3>
+                        <p>Web Dev</p>
                     </div>
                 </div>
                 <div class="team-node member-node">
                     <div class="node-content">
-                        <h3>Moueen</h3>
+                        <h3>Gullam Moueen</h3>
                         <p>full stack Web Specialist</p>
                     </div>
                 </div>
                
                 <div class="team-node member-node">
                     <div class="node-content">
-                        <h3>Talha</h3>
+                        <h3>Talha Seead</h3>
                         <p>Graphic Designer</p>
                     </div>
                 </div>
@@ -1327,6 +1327,222 @@
         </div>
     </div>
 </section>
+
+<!--reviewwwwwwwwww-->
+<section class="rating-section">
+    <div class="rating-wrapper">
+        <h2 class="rating-title">How was your experience?</h2>
+        <p class="rating-subtitle">Select a cloud to rate our service</p>
+
+        <div class="clouds-grid">
+            <div class="rating-cloud" data-value="1">
+                <div class="cloud-shape">
+                    <div class="face">
+                        <div class="eyes angry-eyes"><span></span><span></span></div>
+                        <div class="mouth sad-arch"></div>
+                    </div>
+                </div>
+                <span id="n">Poor</span>
+            </div>
+
+            <div class="rating-cloud" data-value="2">
+                <div class="cloud-shape">
+                    <div class="face">
+                        <div class="eyes"><span></span><span></span></div>
+                        <div class="mouth flat-line"></div>
+                    </div>
+                </div>
+                <span id="n">Fair</span>
+            </div>
+
+            <div class="rating-cloud" data-value="3">
+                <div class="cloud-shape">
+                    <div class="face">
+                        <div class="eyes"><span></span><span></span></div>
+                        <div class="mouth neutral-circle"></div>
+                    </div>
+                </div>
+                <span id="n">Good</span>
+            </div>
+
+            <div class="rating-cloud" data-value="4">
+                <div class="cloud-shape">
+                    <div class="face">
+                        <div class="eyes"><span></span><span></span></div>
+                        <div class="mouth smile-curve"></div>
+                    </div>
+                </div>
+                <span id="n">Great</span>
+            </div>
+
+            <div class="rating-cloud" data-value="5" id="excellent-cloud">
+                <div class="cloud-shape">
+                    <div class="face">
+                        <div class="eyes blinking-eyes"><span></span><span></span></div>
+                        <div class="mouth big-smile"></div>
+                    </div>
+                </div>
+                <span id="n">Excellent!</span>
+            </div>
+        </div>
+
+        <div class="rating-result">
+            <div class="average-box">
+                <span id="avg-val">4.8</span>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Total Reviews: <span id="total-rev">1,250</span></p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .rating-section {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        padding: 60px 20px;
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden; /* Prevent scroll on heart fly */
+    }
+
+    .rating-wrapper { width: 100%; max-width: 900px; text-align: center; }
+    .rating-title { color: #11113a; font-size: 2.5rem; font-weight: 800; }
+    .rating-subtitle { color: #666; margin-bottom: 50px; }
+
+    /* Centered Grid for Mobile & Desktop */
+    .clouds-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 30px;
+        justify-items: center;
+        margin-bottom: 50px;
+    }
+
+    .rating-cloud { cursor: pointer; transition: 0.3s; text-align: center; position: relative; }
+    .rating-cloud span { display: block; margin-top: 15px; font-weight: 600; color: #888; }
+
+    .cloud-shape {
+        position: relative;
+        width: 100px;
+        height: 50px;
+        background: #f0f2f5;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .cloud-shape::before, .cloud-shape::after {
+        content: ''; position: absolute; background: inherit; border-radius: 50%;
+    }
+    .cloud-shape::before { width: 50px; height: 50px; top: -25px; left: 15px; }
+    .cloud-shape::after { width: 60px; height: 60px; top: -30px; right: 10px; }
+
+    /* --- Faces & Different Mouths --- */
+    .face { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; margin-top: 12px; height: 60px; }
+    .eyes { display: flex; gap: 15px; }
+    .eyes span { width: 6px; height: 6px; background: #11113a; border-radius: 50%; }
+
+    .mouth { background: #11113a; transition: 0.3s; }
+
+    /* 1. Angry */
+    .angry-eyes span { transform: translateY(2px) rotate(45deg); border-radius: 2px; height: 3px; }
+    .sad-arch { width: 18px; height: 8px; background: transparent !important; border-top: 3px solid #11113a; border-radius: 50% 50% 0 0; margin-top: 8px; }
+    
+    /* 2. Flat */
+    .flat-line { width: 15px; height: 3px; margin-top: 10px; border-radius: 2px; }
+    
+    /* 3. Neutral */
+    .neutral-circle { width: 10px; height: 10px; border-radius: 50%; margin-top: 8px; background: transparent !important; border: 2px solid #11113a; }
+
+    /* 4. Smile */
+    .smile-curve { width: 20px; height: 10px; background: transparent !important; border-bottom: 3px solid #11113a; border-radius: 0 0 15px 15px; margin-top: 5px; }
+
+    /* 5. Excellent */
+    .big-smile { width: 25px; height: 12px; background: #11113a; border-radius: 0 0 20px 20px; margin-top: 5px; }
+
+    /* Selection States */
+    .rating-cloud.selected .cloud-shape { background: #11113a; transform: scale(1.1); box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2); }
+    .rating-cloud.selected .eyes span, 
+    .rating-cloud.selected .mouth { background: #00d4ff !important; border-color: #00d4ff !important; }
+    .rating-cloud.selected span { color: #11113a; font-weight: 800; }
+
+    /* Result Styling */
+    .rating-result { border-top: 2px solid #f0f2f5; padding-top: 30px; }
+    .average-box { font-size: 2.8rem; font-weight: 900; color: #11113a; display: flex; justify-content: center; align-items: center; gap: 15px; }
+    .average-box i { color: #ffca28; animation: pulse 2s infinite; }
+
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+    /* Blue Heart Particle - Global Positioning */
+    .blue-heart {
+        position: fixed;
+        color: #00d4ff;
+        font-size: 50px;
+        pointer-events: none;
+        z-index: 9999;
+        animation: heartFlyUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    @keyframes heartFlyUp {
+        0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+        100% { transform: translate(var(--dirX), -200px) scale(0) rotate(45deg); opacity: 0; }
+    }
+
+    /* Mobile Logic */
+    @media (max-width: 600px) {
+        .clouds-grid { grid-template-columns: repeat(2, 1fr); gap: 50px; }
+        .rating-cloud:last-child { grid-column: span 2; margin-top: 10px; } /* Last cloud centers on mobile */
+        .rating-title { font-size: 1.8rem; } 
+        #n{
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    const clouds = document.querySelectorAll('.rating-cloud');
+
+    clouds.forEach(cloud => {
+        cloud.addEventListener('click', (e) => {
+            // Remove previous selection
+            clouds.forEach(c => c.classList.remove('selected'));
+            cloud.classList.add('selected');
+
+            // 5th Cloud Heart Effect
+            if (cloud.getAttribute('data-value') === "5") {
+                for (let i = 0; i < 12; i++) {
+                    createHeart(e.clientX, e.clientY);
+                }
+            }
+        });
+    });
+
+    function createHeart(x, y) {
+        const heart = document.createElement('i');
+        heart.className = 'fas fa-heart blue-heart';
+        
+        // Random horizontal direction
+        const dirX = (Math.random() - 0.5) * 200;
+        heart.style.setProperty('--dirX', `${dirX}px`);
+        
+        // Spawn at click position
+        heart.style.left = `${x}px`;
+        heart.style.top = `${y}px`;
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 1500);
+    }
+</script>
+
 <!--contact-->
   
     <div id="unique-contact-section" style="font-family: 'Montserrat', sans-serif; background-color: #fff; overflow-x: hidden; width: 100%; box-sizing: border-box;">
