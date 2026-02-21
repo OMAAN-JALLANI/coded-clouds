@@ -244,16 +244,19 @@
 .hero-content {
   position: relative;
   z-index: 3;
-  color: #fff;
+  color: #ffffff;
   padding-left: 50px;
-  padding-top: 120px;
-  max-width: 600px;
+  padding-top: 80px;
+  max-width: 700px;
   background: none;
+  
+  
 }
+
 
 .hero-content h1 {
   background: none;
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 20px;
   font-weight: bolder;
 }
