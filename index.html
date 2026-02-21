@@ -1543,6 +1543,239 @@
     }
 </script>
 
+
+<!--FAQQQQQ-->
+<section class="faq-section">
+    <div class="faq-watermark">
+        <img src="./images/logo.webp" alt="watermark">
+    </div>
+
+    <div class="faq-wrapper">
+        <div class="faq-header">
+            <h2 class="faq-title">Frequently Asked <span>Questions</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="q-num">01</span>
+                    <p>What makes CodedClouds different from other agencies?</p>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        We don't just build websites; we engineer cloud-native experiences. Our focus on scalability and high-end security ensures your business is ready for the future of the web.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="q-num">02</span>
+                    <p>Can you migrate my existing site to the cloud?</p>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        Yes, we specialize in seamless migrations. We ensure zero downtime and complete data integrity while moving your infrastructure to modern cloud environments.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="q-num">03</span>
+                    <p>Do you provide custom UI/UX design services?</p>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        Every project we take on includes a bespoke design phase. We focus on user psychology and modern aesthetics to make sure your brand stands out.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="q-num">04</span>
+                    <p>How do you handle project communication?</p>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        Transparency is key. We use dedicated channels (Slack/WhatsApp) and provide weekly progress reports so you are always in the loop.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="q-num">05</span>
+                    <p>What is your typical payment structure?</p>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        Usually, we work on a milestone-based payment plan (25% upfront, and the rest divided across project delivery phases).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* --- Main Variables --- */
+    :root {
+        --navy: #11113a;
+        --light-black: #1a1a1a;
+        --cyan: #00d4ff;
+        --border-color: #f0f2f5;
+    }
+
+    .faq-section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        padding: 60px 15px; /* Mobile par space kam karne ke liye */
+        font-family: 'Montserrat', sans-serif;
+        overflow: hidden;
+    }
+
+    /* --- Watermark Logo --- */
+    .faq-watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        max-width: 500px;
+        opacity: 0.5; /* Very subtle watermark */
+        z-index: 1;
+        pointer-events: none;
+    }
+    .faq-watermark img { width: 100%; height: auto; }
+
+    .faq-wrapper {
+        width: 100%;
+        max-width: 850px;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* --- Header --- */
+    .faq-header { margin-bottom: 50px; text-align: center; }
+    .faq-title { font-size: 2.2rem; font-weight: 800; color: var(--navy); }
+    .faq-title span { color: var(--cyan); }
+    .title-line { 
+        width: 60px; height: 4px; background: var(--cyan); 
+        margin: 15px auto; border-radius: 2px; 
+    }
+
+    /* --- FAQ Items --- */
+    .faq-grid { display: flex; flex-direction: column; gap: 15px; }
+
+    .faq-item {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .faq-question {
+        padding: 22px 25px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .q-num {
+        font-weight: 800;
+        color: var(--cyan);
+        margin-right: 20px;
+        font-size: 0.9rem;
+    }
+
+    .faq-question p {
+        flex: 1;
+        font-weight: 700;
+        color: var(--light-black);
+        font-size: 1.05rem;
+        margin: 0;
+    }
+
+    .faq-question i {
+        color: var(--navy);
+        transition: 0.4s;
+    }
+
+    /* --- Answer Area --- */
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .answer-content {
+        padding: 0 25px 25px 55px;
+        color: #555;
+        line-height: 1.7;
+        font-size: 0.95rem;
+    }
+
+    /* --- Active States --- */
+    .faq-item.active {
+        border-color: var(--navy);
+        box-shadow: 0 10px 25px rgba(17, 17, 58, 0.05);
+    }
+
+    .faq-item.active .faq-question p { color: var(--navy); }
+
+    .faq-item.active i {
+        transform: rotate(45deg);
+        color: var(--cyan);
+    }
+
+    .faq-item.active .faq-answer {
+        max-height: 300px; /* Adjust based on text length */
+    }
+
+    /* --- Mobile Optimization --- */
+    @media (max-width: 600px) {
+        .faq-section { padding: 40px 10px; }
+        .faq-title { font-size: 1.6rem; }
+        .faq-question { padding: 18px 15px; }
+        .answer-content { padding: 0 15px 20px 45px; font-size: 0.9rem; }
+        .q-num { margin-right: 12px; }
+        .faq-watermark { width: 80%; }
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            
+            // Close other items for accordion effect
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) item.classList.remove('active');
+            });
+
+            // Toggle current
+            faqItem.classList.toggle('active');
+        });
+    });
+</script>
+
+
+
+
 <!--contact-->
   
     <div id="unique-contact-section" style="font-family: 'Montserrat', sans-serif; background-color: #fff; overflow-x: hidden; width: 100%; box-sizing: border-box;">
@@ -1750,8 +1983,7 @@
                 </ul>
             </div>
 
-        </div>
-
+        </div> 
         <hr class="footer-divider">
 
         <div class="footer-bottom">
@@ -1764,6 +1996,20 @@
     </div>
 </footer>
  <style>
+
+    .b-h{
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .b-h p{
+        color: #13cddb;
+        font-size: 80px;
+        letter-spacing: 1mm;
+        font-weight: 800;
+    }
   /* ========================
    FULL WIDTH FOOTER STYLING
    ======================== */
@@ -1919,6 +2165,10 @@
     .footer-legal a { margin: 0 10px; }
 }
  </style>
+
+
+
+
 <div class="offcanvas offcanvas-top custom-offcanvas" tabindex="-1" id="offcanvasDo" aria-labelledby="offcanvasDoLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasDoLabel">WHAT WE DO</h5>
