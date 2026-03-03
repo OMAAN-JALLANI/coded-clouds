@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Non-Disclosure Agreement | Your Company Name</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #11113a; /* Your Navy Blue */
+            --secondary-color: #00d2ff; /* Your Cyan */
+            --text-color: #333;
+            --bg-color: #f4f7f9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .nda-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            border-top: 10px solid var(--primary-color);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-placeholder {
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-top: 10px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            font-size: 14px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h3 {
+            color: var(--primary-color);
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--secondary-color);
+            display: inline-block;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        p {
+            margin: 0 0 15px 0;
+            text-align: justify;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .sig-box {
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+        }
+
+        .sig-label {
+            font-weight: 600;
+            font-size: 13px;
+            color: #777;
+            text-transform: uppercase;
+        }
+
+        .print-btn {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .print-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            .print-btn { display: none; }
+            body { padding: 0; background: white; }
+            .nda-container { box-shadow: none; border: none; padding: 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .nda-container { padding: 30px 20px; }
+            .signature-grid { grid-template-columns: 1fr; }
+            .meta-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nda-container">
+        <div class="header">
+            <div class="logo-placeholder">CODED TEAM</div>
+            <h1>Non-Disclosure Agreement</h1>
+        </div>
+
+        <div class="meta-info">
+            <div><strong>Effective Date:</strong> ___________, 2026</div>
+            <div><strong>Document ID:</strong> CT-NDA-2026-001</div>
+        </div>
+
+        <div class="section">
+            <p>This Non-Disclosure Agreement (the "Agreement") is entered into between <strong>Coded Team Solutions</strong> (the "Disclosing Party") and <strong>__________________________</strong> (the "Receiving Party") to prevent the unauthorized disclosure of Confidential Information.</p>
+        </div>
+
+        <div class="section">
+            <h3>1. Confidential Information</h3>
+            <p>Confidential Information shall include all data, software code, UI/UX designs, business strategies, client lists, and technical processes disclosed by the Disclosing Party to the Receiving Party, whether in writing or orally.</p>
+        </div>
+
+        <div class="section">
+            <h3>2. Obligations of Receiving Party</h3>
+            <p>The Receiving Party shall hold and maintain the Confidential Information in strictest confidence for the sole and exclusive benefit of the Disclosing Party. The Receiving Party shall not, without prior written approval of Disclosing Party, use for Receiving Party's own benefit, publish, copy, or otherwise disclose to others.</p>
+        </div>
+
+        <div class="section">
+            <h3>3. Time Periods</h3>
+            <p>The non-disclosure provisions of this Agreement shall survive the termination of this Agreement and Receiving Party's duty to hold Confidential Information in confidence shall remain in effect for a period of <strong>five (5) years</strong> from the date of disclosure.</p>
+        </div>
+
+        <div class="section">
+            <h3>4. Legal Recourse</h3>
+            <p>Any breach of this agreement may lead to legal action, including but not limited to, lawsuits for damages and injunctive relief under the jurisdiction of the local governing laws.</p>
+        </div>
+
+        <div class="signature-grid">
+            <div class="sig-box">
+                <div class="sig-label">Disclosing Party (Coded Team)</div>
+                <br><br>
+                <span>Signature: ___________________</span>
+            </div>
+            <div class="sig-box">
+                <div class="sig-label">Receiving Party (Client/Employee)</div>
+                <br><br>
+                <span>Signature: ___________________</span>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">Download as PDF / Print</button>
+
+</body>
+</html>
